@@ -1,129 +1,286 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فضائلِ اہلِ بیتؑ - عشقِ امام حسینؑ پورٹل</title>
-       
-    <meta name="description" content="عشقِ اہلِ بیتؑ پورٹل: امام علیؑ اور امام حسینؑ کی احادیث، فضائل، اقوالِ مبارکہ اور کربلا کی تعلیمات۔ حسن جتوئی کی ایک علمی کاوش۔">
-    <meta name="keywords" content="فضائلِ امام حسینؑ, امام حسین کی محبت, امام حسین کی دعائیں, عاشقانِ حسینؑ, کربلا کی کہانی, عاشورا کے احادیث, امام حسینؑ کے اقوال, امام حسینؑ کی قربانی, حسینؑ اور اہل بیتؑ کی فضائل, حضرت حسینؑ کی شخصیت, عاشقانِ اہل بیت کی تعلیمات, حسینؑ اور صبر, امام حسینؑ اور عدل, امام حسینؑ کی اخلاقی تعلیمات, امام حسینؑ کی شفاعت, امام حسینؑ کا نور, حسینؑ کی پیروی کیسے کریں, امام حسینؑ کی زندگی اور فضائل, دعائے عشقِ حسینؑ, امام حسینؑ کی حدیثیں, کربلا کی تاریخ اور اہمیت, امام حسینؑ کے اخلاقی اصول, امام حسینؑ کے مبارک اقوال, حسینؑ کی قربانی کا درس, حسینؑ اور حق کے لیے جدوجہد, امام حسینؑ کے معجزات, امام حسینؑ کے پیروکار, امام حسینؑ اور صلح و عدل, حسینؑ کے علم اور حکمت, امام حسینؑ کی محبت میں زندگی گزارنا, حسینؑ کی تعلیمات اور شاعری, امام حسینؑ کے خطبے, کربلا میں شہداء کی فضائل, عاشورا کی اہمیت اور فضائل, امام حسینؑ کی عبادت, امام حسینؑ کے اقوال و احادیث عربی اور اردو, امام حسینؑ کی حیات و فضائل, حضرت حسینؑ اور اہل بیتؑ کی کہانیاں, امام حسینؑ کی قربانی کی مثال, امام حسینؑ کے اصول و تعلیمات, حسینؑ کی تعلیمات, احادیث, حسن جتوئی, عشق اہل بیت پورٹل">
-    <meta name="author" content="Hassan Jatoi">
-    <meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فضائلِ اہلِ بیتؑ - عشقِ امام حسینؑ پورٹل | حسن جتوئی</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --imam-green: #004d00;
-            --imam-gold: #c5a021;
-            --imam-red: #7a0000;
-            --bg-light: #f9f7f2;
-            --font-urdu: 'Noto Nastaliq Urdu', serif;
-            --font-arabic: 'Amiri', serif;
-        }                
-        * { box-sizing: border-box; scroll-behavior: smooth; }
-        body { background-color: var(--bg-light); margin:0; font-family: var(--font-urdu); line-height:1.8; color:#222; }
-        nav { background:#111; padding:10px 0; text-align:center; position:sticky; top:0; z-index:1000; }
-        nav a { color: var(--imam-gold); margin:0 10px; text-decoration:none; font-weight:bold; font-size:1rem; }
-        .main-header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1590076175582-40940b43f021?auto=format&fit=crop&w=1200&q=80'); background-size:cover; background-position:center; color:white; padding:80px 15px; text-align:center; }
-        .header-title { font-family: var(--font-urdu); font-size: clamp(2.5rem, 10vw, 4rem); color:var(--imam-gold); text-shadow:2px 2px 8px rgba(0,0,0,0.8); margin:0; }
-        .container { width:100%; max-width:900px; margin:30px auto; padding:0 15px; }
-        .section-title { text-align:center; font-size:clamp(2rem,7vw,3rem); color:var(--imam-red); margin:50px 0 30px; border-bottom:2px solid var(--imam-gold); padding-bottom:10px; }
-        .search-box { width:100%; padding:10px 15px; margin-bottom:30px; font-size:1rem; border-radius:10px; border:1px solid #ccc; }
-        .verse-card { background:white; margin-bottom:25px; padding:25px; border-radius:15px; box-shadow:0 8px 18px rgba(0,0,0,0.06); border-right:6px solid var(--imam-green); text-align:center; }
-        .hadith-number { background:var(--imam-gold); color:white; padding:5px 15px; border-radius:20px; display:inline-block; margin-bottom:15px; font-size:0.9rem; }
-        .arabic-text { font-family: var(--font-arabic); font-size:clamp(1.5rem,5vw,2.2rem); color:var(--imam-green); line-height:1.5; font-weight:700; }
-        .book-name { font-size:0.9rem; color:#555; margin-top:5px; font-style:italic; }
-        .urdu-text { font-family: var(--font-urdu); font-size:clamp(1.1rem,4vw,1.5rem); color:#333; margin-top:10px; line-height:1.9; }
-        .btn-copy { background:var(--imam-gold); color:black; border:none; padding:10px 20px; border-radius:25px; font-family:var(--font-urdu); cursor:pointer; margin-top:15px; width:100%; max-width:200px; transition:0.3s; }
-        footer { background:#111; color:#bbb; padding:50px 15px; text-align:center; font-family: var(--font-urdu); }
-        @media(max-width:600px){ .main-header{padding:60px 10px;} .verse-card{padding:20px 15px;} }
-    </style>
+<meta name="description" content="عشقِ اہلِ بیتؑ پورٹل: رسول ﷺ، اہل بیتؑ، امام حسنؑ، امام حسینؑ، سیدہ فاطمہؑ، 12 امام و 14 معصومینؑ، قرآن کریم کی فضائل، احادیث، اقوال اور عربی دعائیں۔ حسن جتوئی کی علمی کاوش۔">
+<meta name="keywords" content="رسول اللہ ﷺ, قرآن کریم, فضائلِ امام علیؑ, امام حسنؑ, فضائلِ حسینؑ, سیدہ فاطمہؑ, بارہ امام, چودہ معصومین, احادیث, اقوال, عربی دعائیں, کربلا, عاشورا, امام حسین کی قربانی">
+<meta name="author" content="حسن جتوئی">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#004d00">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hassanaliuk11-oss.github.io/Hassanalipoetry-/">
+<meta property="og:title" content="فضائلِ اہلِ بیتؑ - عشقِ امام حسینؑ پورٹل | حسن جتوئی">
+<meta property="og:description" content="رسول ﷺ، اہل بیتؑ، امام حسنؑ و امام حسینؑ، قرآن کریم کی فضائل، احادیث اور عربی دعائیں۔">
+<meta property="og:image" content="https://images.unsplash.com/photo-1590076175582-40940b43f021?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:site_name" content="عشقِ اہلِ بیتؑ پورٹل">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://hassanaliuk11-oss.github.io/Hassanalipoetry-/">
+<meta name="twitter:title" content="فضائلِ اہلِ بیتؑ - عشقِ امام حسینؑ پورٹل | حسن جتوئی">
+<meta name="twitter:description" content="رسول ﷺ، اہل بیتؑ، امام حسنؑ و امام حسینؑ، قرآن کریم کی فضائل، احادیث اور عربی دعائیں۔">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1590076175582-40940b43f021?auto=format&fit=crop&w=1200&q=80">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "حسن جتوئی",
+  "alternateName": "حسن علی جتوئی",
+  "url": "https://hassanaliuk11-oss.github.io/Hassanalipoetry-/",
+  "image": "https://i.ibb.co/XZpNgSJ4/IMG-20251026-WA0025-modified.png",
+  "jobTitle": "شاعر، مصنف اور علمی مواد کا خالق",
+  "description": "حسن جتوئی ایک جدید شاعر اور مصنف ہیں، خالق عشقِ اہلِ بیتؑ پورٹل۔",
+  "sameAs": [
+    "https://wa.me/923083500829",
+    "https://www.facebook.com/share/17zubUQBeE/",
+    "https://www.tiktok.com/@hassanjatoi209",
+    "https://www.linkedin.com/in/hassanjatoi786"
+  ]
+}
+</script>
+
+<link rel="icon" href="https://i.ibb.co/XZpNgSJ4/IMG-20251026-WA0025-modified.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --imam-green: #004d00;
+    --imam-gold: #c5a021;
+    --imam-red: #7a0000;
+    --bg-light: #f9f7f2;
+    --font-urdu: 'Noto Nastaliq Urdu', serif;
+    --font-arabic: 'Amiri', serif;
+}
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body { background-color: var(--bg-light); margin: 0; padding: 0; line-height: 1.8; color: #222; font-size: 16px; }
+
+nav {
+    background: rgba(0,0,0,0.95);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--imam-gold);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+nav a {
+    color: var(--imam-gold);
+    text-decoration: none;
+    font-family: var(--font-urdu);
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+nav a:hover { color: var(--imam-red); }
+
+.سرخی_مرکزی {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1590076175582-40940b43f021?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 15px;
+    text-align: center;
+    border-bottom: 6px solid var(--imam-gold);
+}
+.عنوان_سرخی { font-family: var(--font-urdu); font-size: clamp(2.5rem,10vw,4.5rem); color: var(--imam-gold); text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin:0; }
+.زیر_عنوان { font-family: var(--font-urdu); font-size:1.2rem; margin-top:10px; }
+
+.ظرف { width:100%; max-width:900px; margin:30px auto; padding:0 15px; }
+.عنوان_حصہ { font-family: var(--font-urdu); text-align:center; font-size:clamp(2rem,7vw,3rem); color:var(--imam-red); margin:50px 0 30px; border-bottom:2px solid var(--imam-gold); padding-bottom:10px; }
+.کارت_آیت, .کارت_حدیث, .کارت_فضائل { background:white; margin-bottom:30px; padding:30px; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.06); border-right:6px solid var(--imam-green); text-align:center; }
+.نمبر_آیت, .نمبر_حدیث, .نمبر_فضائل { background: var(--imam-gold); color:white; padding:5px 15px; border-radius:20px; font-family:Arial, sans-serif; font-size:0.9rem; display:inline-block; margin-bottom:10px; }
+.کتاب_نام { font-family:var(--font-urdu); font-size:0.9rem; color:var(--imam-red); margin-bottom:10px; }
+.متن_عربی { font-family:var(--font-arabic); font-size:clamp(1.6rem,6vw,2.2rem); color:var(--imam-green); margin-bottom:10px; font-weight:700; line-height:1.5; }
+.متن_اردو { font-family:var(--font-urdu); font-size:clamp(1.2rem,5vw,1.6rem); color:#333; margin-top:10px; border-top:1px dashed #eee; padding-top:15px; line-height:2; }
+.زر_کاپی { background:var(--imam-gold); color:black; border:none; padding:10px 20px; border-radius:25px; font-family:var(--font-urdu); cursor:pointer; margin-top:15px; width:100%; max-width:200px; transition:0.3s; }
+
+footer { background:#111; color:#bbb; padding:50px 15px; text-align:center; font-family:var(--font-urdu); }
+@media (max-width:600px){ .سرخی_مرکزی{padding:60px 10px;} .کارت_آیت, .کارت_حدیث, .کارت_فضائل{padding:20px 15px;} }
+</style>
 </head>
 <body>
 
 <nav>
-    <a href="#home">ہوم</a>
-    <a href="#ali">فضائلِ علیؑ</a>
-    <a href="#hussain">فضائلِ حسینؑ</a>
+    <a href="#home">ہوم</a>
+    <a href="#rasool">رسول ﷺ</a>
+    <a href="#ali">فضائلِ علیؑ</a>
+    <a href="#hasan">امام حسنؑ</a>
+    <a href="#fatima">سیدہ فاطمہؑ</a>
+    <a href="#hussain">فضائلِ حسینؑ</a>
+    <a href="#12imam">بارہ امامؑ</a>
+    <a href="#14masoom">چودہ معصومینؑ</a>
+    <a href="#quran">قرآن کریم</a>
+    <a href="#hassan-jatoi">حسن جتوئی</a>
 </nav>
 
-<header class="main-header" id="home">
-    <h1 class="header-title">فرامینِ رسول ﷺ</h1>
-    <p>فضائلِ علیؑ و حسینؑ</p>
+<header class="سرخی_مرکزی" id="home">
+    <h1 class="عنوان_سرخی">عشقِ اہلِ بیتؑ پورٹل</h1>
+    <p class="زیر_عنوان">فضائلِ رسول ﷺ، اہل بیتؑ، 12 امام و 14 معصومینؑ اور قرآن کریم | حسن جتوئی</p>
 </header>
 
-<div class="container" id="ali">
-    <h2 class="section-title">فضائلِ مولا علیؑ (20 احادیث)</h2>
-    <input type="text" id="searchAli" class="search-box" placeholder="عربی یا اردو میں تلاش کریں...">
-    <div id="ali-hadith-container"></div>
+<!-- رسول ﷺ -->
+<div class="ظرف" id="rasool">
+    <h2 class="عنوان_حصہ">فضائلِ رسول ﷺ</h2>
+    <div class="کارت_فضائل">
+        <span class="نمبر_فضائل">1</span>
+        <div class="کتاب_نام">سیرت النبی ﷺ</div>
+        <div class="متن_عربی">خَيْرُكُمْ مَنْ تَعَلَّمَ القُرْآنَ وَعَلَّمَهُ</div>
+        <div class="متن_اردو">تم میں بہترین وہ ہے جو قرآن سیکھے اور دوسروں کو سکھائے۔</div>
+        <button class="زر_کاپی" onclick="کاپی_متن(this)">کاپی کریں</button>
+    </div>
 </div>
 
-<div class="container" id="hussain">
-    <h2 class="section-title">فضائلِ امام حسینؑ (20 احادیث)</h2>
-    <input type="text" id="searchHussain" class="search-box" placeholder="عربی یا اردو میں تلاش کریں...">
-    <div id="hussain-hadith-container"></div>
+<!-- امام علیؑ -->
+<div class="ظرف" id="ali">
+    <h2 class="عنوان_حصہ">فضائلِ امام علیؑ</h2>
+    <div class="کارت_فضائل">
+        <span class="نمبر_فضائل">1</span>
+        <div class="کتاب_نام">نهج البلاغہ</div>
+        <div class="متن_عربی">اَلشُّجَاعَةُ تَشْرِفُ الرَّجُلَ</div>
+        <div class="متن_اردو">شجاعت انسان کی عزت ہے۔</div>
+        <button class="زر_کاپی" onclick="کاپی_متن(this)">کاپی کریں</button>
+    </div>
 </div>
 
+<!-- امام حسنؑ -->
+<div class="ظرف" id="hasan">
+    <h2 class="عنوان_حصہ">فضائلِ امام حسنؑ</h2>
+    <div class="کارت_فضائل">
+        <span class="نمبر_فضائل">1</span>
+        <div class="کتاب_نام">تاریخ امام حسنؑ</div>
+        <div class="متن_عربی">اَلْحَلْمُ صِفَةُ المُؤْمِنِ</div>
+        <div class="متن_اردو">بردباری مومن کی صفت ہے۔</div>
+        <button class="زر_کاپی" onclick="کاپی_متن(this)">کاپی کریں</button>
+    </div>
+</div>
+
+<!-- سیدہ فاطمہؑ -->
+<div class="ظرف" id="fatima">
+    <h2 class="عنوان_حصہ">فضائلِ سیدہ فاطمہؑ</h2>
+    <div class="کارت_فضائل">
+        <span class="نمبر_فضائل">1</span>
+        <div class="کتاب_نام">سیرت فاطمہؑ</div>
+        <div class="متن_عربی">فَاطِمَةُ سَيِّدَةُ نِسَاءِ العَالَمِينَ</div>
+        <div class="متن_اردو">فاطمہؑ عالم کی عورتوں کی سردار ہیں۔</div>
+        <button class="زر_کاپی" onclick="کاپی_متن(this)">کاپی کریں</button>
+    </div>
+</div>
+
+<!-- فضائل حسینؑ -->
+<div class="ظرف" id="hussain">
+    <h2 class="عنوان_حصہ">فضائلِ امام حسینؑ</h2>
+    <div class="کارت_فضائل">
+        <span class="نمبر_فضائل">1</span>
+        <div class="کتاب_نام">کربلا کی تاریخ</div>
+        <div class="متن_عربی">مَنْ أَحَبَّ الْحُسَيْنَ فَقَدْ أَحَبَّنَا</div>
+        <div class="متن_اردو">جو حسینؑ سے محبت کرتا ہے وہ ہم سے محبت کرتا ہے۔</div>
+        <button class="زر_کاپی" onclick="کاپی_متن(this)">کاپی کریں</button>
+    </div>
+</div>
+
+<!-- بارہ امامؑ -->
+<div class="ظرف" id="12imam">
+    <h2 class="عنوان_حصہ">فضائلِ بارہ امامؑ</h2>
+    <div class="کارت_فضائل">
+        <span class="نمبر_فضائل">1</span>
+        <div class="کتاب_نام">تاریخ امامان</div>
+        <div class="متن_عربی">الإِمَامُ الْمَهْدِيُّ رَاعِي الْمُسْلِمِينَ</div>
+        <div class="متن_اردو">امام مہدیؑ مسلمانوں کے رہنما ہیں۔</div>
+        <button class="زر_کاپی" onclick="کاپی_متن(this)">کاپی کریں</button>
+    </div>
+</div>
+
+<!-- چودہ معصومینؑ -->
+<div class="ظرف" id="14masoom">
+    <h2 class="عنوان_حصہ">فضائلِ چودہ معصومینؑ</h2>
+    <div class="کارت_فضائل">
+        <span class="نمبر_فضائل">1</span>
+        <div class="کتاب_نام">کتاب معصومینؑ</div>
+        <div class="متن_عربی">المَعْصُومُونَ هُمْ أَنْوارُ اللهِ</div>
+        <div class="متن_اردو">معصومینؑ اللہ کے نور ہیں۔</div>
+        <button class="زر_کاپی" onclick="کاپی_متن(this)">کاپی کریں</button>
+    </div>
+</div>
+
+<!-- قرآن کریم -->
+<div class="ظرف" id="quran">
+    <h2 class="عنوان_حصہ">قرآن کریم کی آیات و فضائل</h2>
+    <div class="کارت_آیت">
+        <span class="نمبر_آیت">آیت 1</span>
+        <div class="کتاب_نام">کتاب: قرآن کریم</div>
+        <div class="متن_عربی">إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ</div>
+        <div class="متن_اردو">یقیناً مومن سب بھائی بھائی ہیں۔</div>
+        <button class="زر_کاپی" onclick="کاپی_متن(this)">کاپی کریں</button>
+    </div>
+</div>
+
+<!-- حسن جتوئی کا حصہ -->
+<div class="ظرف" id="hassan-jatoi">
+    <h2 class="عنوان_حصہ">حسن جتوئی کی شاعری</h2>
+    <div class="کارت_فضائل">
+        <span class="نمبر_فضائل">1</span>
+        <div class="کتاب_نام">شاعری: حسن جتوئی</div>
+        
+        <div class="متن_عربی">
+            حُبُ الحُسَينِ يَملأُ القَلْبَ نُورًا<br>
+            فِي كُلِّ نَفَسٍ أَشْعُرُ بِوَجْدِهِ<br>
+            صَوْتُهُ يَهزُّ نُفُوسِي وَيُذَكِّرُنِي بِالإِيمَانِ<br>
+            تَضْحِيَتُهُ دَرْسٌ لِلأَبَدِ<br>
+            عِشْقُهُ يُنِيرُ طَرِيقِي فِي الظُلْمَةِ<br>
+            قَلْبِي يَخْفِقُ بِاسْمِهِ كُلَّ يَوْمٍ<Br>
+            لَا يَكُونُ الحُبُ إِلَّا لِلحُسَينِ<br>
+            عِيُونِي تَبْكِي لِشَجَاعَتِهِ<br>
+            رُوحِي تَسْمُو بِذِكْرِهِ وَدُعَائِهِ<br>
+            حُبُ الحُسَينِ هُوَ مَنْبَعُ السَّعَادَةِ
+        </div>
+        
+        <div class="متن_اردو">
+            حسینؑ کی محبت دل کو روشنی سے بھر دیتی ہے<br>
+            ہر سانس میں میں ان کی محبت کا احساس کرتا ہوں<br>
+            ان کی آواز میری روح کو جھنجھوڑتی ہے اور ایمان یاد دلاتی ہے<br>
+            ان کی قربانی ہمیشہ کے لیے سبق ہے<br>
+            ان کا عشق تاریکی میں میرا راستہ روشن کرتا ہے<br>
+            میرا دل ہر روز ان کے نام پر دھڑکتا ہے<br>
+            محبت صرف حسینؑ کے لیے ہی ہے<br>
+            میری آنکھیں ان کی شجاعت پر رو رہی ہیں<br>
+            میری روح ان کے ذکر اور دعا سے بلند ہوتی ہے<br>
+            حسینؑ کی محبت خوشی کا اصل ماخذ ہے
+        </div>
+        
+        <button class="زر_کاپی" onclick="کاپی_متن(this)">کاپی کریں</button>
+    </div>
+</div>
+    
 <footer>
-    <p>الصلوٰۃ والسلام علیک یا رسول اللہ ﷺ</p>
-    <p>© 2026 عشقِ اہلِ بیتؑ پورٹل | Hassan Jatoi</p>
+    <p>الصلوٰۃ والسلام علیک یا رسول اللہ ﷺ</p>
+    <p>© 2026 عشقِ اہلِ بیتؑ پورٹل | حسن جتوئی</p>
 </footer>
 
 <script>
-    const aliHadiths = [
-        {a:"لَا فَتًى إِلَّا عَلِيٌّ وَلَا سَيْفَ إِلَّا ذُو ٱلْفَقَارِ", u:"علیؑ جیسا کوئی جوان نہیں اور ذوالفقار جیسی کوئی تلوار نہیں۔", book:"بحار الأنوار، ج ۴۳، ص ۳۴۲"},
-        {a:"عَلِيٌّ مِنِّي وَأَنَا مِنْهُ", u:"علیؑ مجھ سے ہے اور میں علیؑ سے ہوں۔", book:"نهج البلاغہ، خطبہ ۱"},
-        {a:"ذِكْرُ عَلِيٍّ عِبَادَةٌ", u:"علیؑ کا ذکر عبادت ہے۔", book:"مستدرک الوسائل، ج ۱۱، ص ۲۵"},
-        {a:"يَا عَلِيُّ لَا يُحِبُّكَ إِلَّا مُؤْمِنٌ وَلَا يُبْغِضُكَ إِلَّا مُنَافِقٌ", u:"اے علیؑ! تجھ سے سوائے مومن کے کوئی محبت نہیں کرے گا اور سوائے منافق کے کوئی بغض نہیں رکھے گا۔", book:"کافی، ج ۱، ص ۴۵"},
-        // باقی 16 احادیث اسی فارمیٹ میں...
-    ];
-
-    const hussainHadiths = [
-        {a:"أَحَبَّ اللَّهُ مَنْ أَحَبَّ حُسَيْنًا", u:"اللہ اس سے محبت کرتا ہے جو حسینؑ سے محبت کرے۔", book:"مصباح الزهد، ص ۱۲۳"},
-        {a:"حُسَيْنٌ سَبْطٌ مِنَ الأَسْبَاطِ", u:"حسینؑ میری اولاد میں سے ایک عظیم فرزند ہے۔", book:"بحار الأنوار، ج ۴۳، ص ۳۴۵"},
-        {a:"رَيْحَانَتَاِيَ مِنَ الدُّنْيَا الْحَسَنُ وَالْحُسَيْنُ", u:"دنیا میں میرے دو پھول حسنؑ اور حسینؑ ہیں۔", book:"الكافي، ج ۱، ص ۲۱۰"},
-        // باقی 17 احادیث اسی فارمیٹ میں...
-    ];
-
-    function renderHadiths(list, containerId, searchId, startNum) {
-        const container = document.getElementById(containerId);
-        const searchInput = document.getElementById(searchId);
-
-        function display(filter="") {
-            container.innerHTML="";
-            list.forEach((item, index) => {
-                if(item.a.includes(filter) || item.u.includes(filter) || item.book.includes(filter)){
-                    const card=document.createElement('div');
-                    card.className='verse-card';
-                    card.innerHTML=`<span class="hadith-number">حدیث ${startNum+index}</span>
-                    <div class="arabic-text">${item.a}</div>
-                    <div class="book-name">${item.book}</div>
-                    <div class="urdu-text">${item.u}</div>
-                    <button class="btn-copy" onclick="copyText(this)">کاپی کریں</button>`;
-                    container.appendChild(card);
-                }
-            });
-        }
-
-        searchInput.addEventListener('input', e => display(e.target.value));
-        display();
-    }
-
-    window.onload = () => {
-        renderHadiths(aliHadiths,'ali-hadith-container','searchAli',1);
-        renderHadiths(hussainHadiths,'hussain-hadith-container','searchHussain',21);
-    }
-
-    function copyText(btn){
-        const card=btn.parentElement;
-        const text=card.querySelector('.arabic-text').innerText+"\n"+card.querySelector('.urdu-text').innerText;
-        const el=document.createElement('textarea'); el.value=text; document.body.appendChild(el); el.select();
-        document.execCommand('copy'); document.body.removeChild(el);
-        btn.innerText="کاپی ہو گیا ✓";
-        setTimeout(()=>btn.innerText="کاپی کریں",2000);
-    }
+function کاپی_متن(زر){
+    const کارڈ = زر.parentElement;
+    const متن = کارڈ.querySelector('.متن_عربی').innerText + "\n" + کارڈ.querySelector('.متن_اردو').innerText;
+    const el = document.createElement('textarea');
+    el.value = متن;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    زر.innerText = "کاپی ہو گیا ✓";
+    setTimeout(() => زر.innerText = "کاپی کریں",2000);
+}
 </script>
+
 </body>
-</html>
+    </html>
+    
