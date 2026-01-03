@@ -5,220 +5,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پورٹلِ عشقِ اہلِ بیتؑ | حسن جتوئی آفیشل</title>
     
-    <!-- Premium Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Premium Fonts: Noto Nastaliq for Urdu and Amiri for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-dark: #002d26;
-            --emerald: #004d40;
-            --gold: #d4af37;
-            --accent-red: #d32f2f;
+            --primary-color: #004d40;
+            --gold-color: #d4af37;
+            --text-dark: #1a1a1a;
             --font-urdu: 'Noto Nastaliq Urdu', serif;
             --font-arabic: 'Amiri', serif;
-            
-            /* Responsive Font Sizes using Clamp */
-            --h1-fluid: clamp(1.8rem, 6vw, 4.5rem);
-            --h2-fluid: clamp(1.5rem, 5vw, 2.8rem);
-            --p-fluid: clamp(1.1rem, 2.5vw, 1.6rem);
-            --card-fluid: clamp(1.3rem, 3.5vw, 2rem);
+
+            /* Fluid Typography - Automatically scales between mobile and desktop */
+            --h1-size: clamp(2rem, 8vw, 5rem);
+            --h2-size: clamp(1.8rem, 5vw, 3rem);
+            --body-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            --arabic-size: clamp(2rem, 7vw, 3.5rem);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: #f0f4f3;
-            color: #222;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fdfc;
+            color: var(--text-dark);
+            line-height: 1.8;
             overflow-x: hidden;
         }
 
-        /* Fixed Header Image from User */
-        .main-header-img {
+        /* Image Header Section */
+        header {
             width: 100%;
-            height: clamp(200px, 45vh, 400px);
-            overflow: hidden;
-            border-bottom: 6px solid var(--gold);
-            background: var(--primary-dark);
+            border-bottom: 6px solid var(--gold-color);
+            background: #000;
         }
 
-        .main-header-img img {
+        .header-img {
             width: 100%;
-            height: 100%;
+            height: clamp(250px, 45vh, 450px);
             object-fit: cover;
             display: block;
         }
 
-        /* Branding Section */
-        .brand-section {
-            background: linear-gradient(135deg, var(--emerald) 0%, #000 100%);
+        /* Branding Overlay */
+        .brand-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #000 100%);
             color: white;
             padding: 50px 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .brand-section h1 {
+        .brand-box h1 {
             font-family: var(--font-urdu);
-            font-size: var(--h1-fluid);
+            font-size: var(--h1-size);
             line-height: 2.2;
-            margin-bottom: 10px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            color: var(--gold);
+            color: var(--gold-color);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
-        /* Hassan Jatoi Official Profile Card */
-        .hassan-card {
+        /* Author Profile Section */
+        .author-section {
             max-width: 1000px;
             margin: -40px auto 60px;
             background: white;
             border-radius: 30px;
-            padding: clamp(30px, 6vw, 60px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
             position: relative;
-            z-index: 100;
-            border-right: 15px solid var(--gold);
+            z-index: 10;
+            border-top: 5px solid var(--gold-color);
             text-align: center;
         }
 
-        .hassan-card h2 {
+        .author-name {
             font-family: var(--font-urdu);
-            font-size: var(--h2-fluid);
-            color: var(--emerald);
+            font-size: var(--h2-size);
+            color: var(--primary-color);
             margin-bottom: 20px;
         }
 
-        .hassan-card p {
+        .author-bio {
             font-family: var(--font-urdu);
-            font-size: var(--p-fluid);
-            line-height: 2.1;
+            font-size: var(--body-size);
+            line-height: 2.2;
             color: #444;
-            max-width: 850px;
-            margin: 0 auto;
         }
 
-        /* Responsive Grid for Content */
-        .content-container {
-            max-width: 1300px;
-            margin: 0 auto 100px;
-            padding: 0 25px;
+        /* Content Grid */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
         }
 
-        .section-header {
+        .section-heading {
             font-family: var(--font-urdu);
-            font-size: var(--h2-fluid);
-            color: var(--emerald);
-            margin: 60px 0 40px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
+            font-size: var(--h2-size);
+            color: var(--primary-color);
+            margin: 50px 0 30px;
+            border-bottom: 2px solid #ddd;
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
-        .section-header::after {
-            content: "";
-            height: 4px;
-            flex-grow: 1;
-            background: linear-gradient(to left, transparent, var(--gold));
-            border-radius: 2px;
-        }
-
-        .grid-layout {
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
-        /* Interactive Card Styling */
-        .content-card {
+        .card {
             background: white;
-            padding: 40px 25px;
             border-radius: 20px;
+            padding: 40px 25px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid #f0f0f0;
-            position: relative;
-            overflow: hidden;
         }
 
-        .content-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 6px; height: 100%;
-            background: var(--gold);
-            opacity: 0;
-            transition: 0.3s;
+        .card:hover {
+            transform: translateY(-15px);
+            border-color: var(--gold-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .content-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-            border-color: var(--gold);
-        }
-
-        .content-card:hover::before { opacity: 1; }
-
-        .content-card h3 {
+        .card h3 {
             font-family: var(--font-urdu);
-            font-size: var(--card-fluid);
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
             color: #111;
-            margin-bottom: 10px;
         }
 
-        /* Modern Modal Viewer */
-        .modal-overlay {
+        /* Modal / Viewer */
+        .overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.92);
-            backdrop-filter: blur(8px);
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
             z-index: 9999;
             display: none;
             overflow-y: auto;
             padding: 30px 15px;
         }
 
-        .modal-body {
+        .modal {
             background: white;
-            max-width: 900px;
-            margin: 0 auto;
-            border-radius: 35px;
-            padding: clamp(30px, 6vw, 60px);
+            max-width: 850px;
+            margin: 40px auto;
+            border-radius: 30px;
+            padding: clamp(20px, 6vw, 60px);
             position: relative;
-            animation: modalFade 0.4s ease;
         }
 
-        @keyframes modalFade {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .close-modal {
+        .close-btn {
             position: absolute;
-            top: 25px; left: 25px;
-            background: var(--accent-red);
+            top: 20px; left: 20px;
+            background: #d32f2f;
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 12px;
+            padding: 10px 25px;
+            border-radius: 10px;
             cursor: pointer;
             font-family: var(--font-urdu);
-            font-size: 1.1rem;
         }
 
-        .ar-display {
+        .arabic-text {
             font-family: var(--font-arabic);
-            font-size: clamp(2rem, 8vw, 3.8rem);
-            color: var(--emerald);
+            font-size: var(--arabic-size);
+            color: var(--primary-color);
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             line-height: 1.6;
             direction: rtl;
         }
 
-        .ur-display {
+        .urdu-text {
             font-family: var(--font-urdu);
-            font-size: var(--p-fluid);
+            font-size: var(--body-size);
             text-align: center;
             line-height: 2.3;
             color: #333;
@@ -226,170 +189,146 @@
             direction: rtl;
         }
 
-        .copy-trigger {
-            background: var(--emerald);
+        .copy-btn {
+            background: var(--primary-color);
             color: white;
             border: none;
             width: 100%;
             padding: 20px;
             border-radius: 50px;
             font-family: var(--font-urdu);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(0,77,64,0.2);
         }
 
-        .copy-trigger:hover { background: #000; transform: scale(1.02); }
+        .copy-btn:hover { background: #000; }
 
-        /* Toast UI */
-        #toast-msg {
+        /* Notification */
+        #toast {
             position: fixed;
-            bottom: 40px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             background: #27ae60;
             color: white;
-            padding: 15px 45px;
+            padding: 15px 40px;
             border-radius: 50px;
             font-family: var(--font-urdu);
             display: none;
             z-index: 10000;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         footer {
-            background: #0b0b0b;
-            color: #888;
-            padding: 100px 20px 50px;
-            text-align: center;
-            border-top: 5px solid var(--gold);
-        }
-
-        .footer-logo {
-            font-family: var(--font-urdu);
-            font-size: 2.5rem;
+            background: #111;
             color: white;
-            margin-bottom: 15px;
+            padding: 80px 20px;
+            text-align: center;
+            font-family: var(--font-urdu);
+            border-top: 5px solid var(--gold-color);
         }
     </style>
 </head>
 <body>
 
-    <div id="toast-msg">تحریر کامیابی سے کاپی کر لی گئی ہے! ✓</div>
+    <div id="toast">تحریر کاپی کر لی گئی ہے! ✓</div>
 
-    <!-- Header Image with Local Filename Support -->
-    <header class="main-header-img">
-        <img src="panjtan-pak-header.jpg" alt="Panjtan Pak AS Header" onerror="this.src='https://hassanaliuk11-oss.github.io/Imam-hussein/panjtan-pak-header.jpg'">
+    <!-- Header Section with your Image -->
+    <header>
+        <img 
+          src="https://hassanaliuk11-oss.github.io/Imam-hussein/panjtan-pak-header.jpg" 
+          alt="Panjtan Pak AS" 
+          class="header-img"
+          onerror="this.src='https://images.unsplash.com/photo-1590076215667-873d1661603d?q=80&w=2000&auto=format&fit=crop'"
+        >
     </header>
 
-    <!-- Brand Header -->
-    <div class="brand-section">
+    <!-- Brand Title -->
+    <div class="brand-box">
         <h1>پورٹلِ عشقِ اہلِ بیتؑ</h1>
     </div>
 
-    <!-- Hassan Jatoi Official Section -->
-    <section class="hassan-card">
-        <h2>حسن جتوئی آفیشل</h2>
-        <p>
-            خوش آمدید! میرا نام حسن جتوئی ہے اور اس پورٹل پر آپ کو چودہ معصومین علیہم السلام کی سیرت اور فضائل پر مبنی میرے مستند علمی مقالات حاصل ہوں گے۔ یہ ایک علمی خدمت ہے جو ترویجِ علومِ آلِ محمدؑ کے لیے وقف ہے۔
+    <!-- Hassan Jatoi Profile -->
+    <section class="author-section">
+        <h2 class="author-name">حسن جتوئی آفیشل</h2>
+        <p class="author-bio">
+            خوش آمدید! میرا نام حسن جتوئی ہے اور اس ڈیجیٹل پورٹل پر آپ کو چودہ معصومین علیہم السلام کی سیرت، مناقب اور فضائل پر مبنی میرے مستند تحقیقی مقالات حاصل ہوں گے۔ یہ پلیٹ فارم علومِ آلِ محمدؑ کی ترویج کے لیے وقف ہے۔
         </p>
     </section>
 
-    <!-- Main Content Area -->
-    <div class="content-container">
+    <!-- Main Content Container -->
+    <div class="container">
         
-        <h2 class="section-header">چودہ معصومین علیہم السلام</h2>
-        <div id="masomeen-grid" class="grid-layout"></div>
+        <h2 class="section-heading">چودہ معصومین علیہم السلام</h2>
+        <div id="m-grid" class="grid"></div>
 
-        <h2 class="section-header" style="margin-top: 80px;">بارہ ائمہ معصومینؑ</h2>
-        <div id="aimma-grid" class="grid-layout"></div>
+        <h2 class="section-heading" style="margin-top: 80px;">بارہ ائمہ معصومینؑ</h2>
+        <div id="i-grid" class="grid"></div>
 
     </div>
 
-    <!-- Content Viewer Modal -->
-    <div id="portal-viewer" class="modal-overlay">
-        <div class="modal-body">
-            <button class="close-modal" onclick="closePortal()">بند کریں ✕</button>
-            <div id="actual-content">
-                <div class="ar-display" id="arabic-part">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-                <div class="ur-display" id="urdu-part">تحقیق و ترتیب: حسن جتوئی</div>
-                <button class="copy-trigger" onclick="copyToClipboard(this)">تحریر کاپی کریں</button>
+    <!-- Modal Viewer -->
+    <div id="viewer" class="overlay">
+        <div class="modal">
+            <button class="close-btn" onclick="closeViewer()">بند کریں ✕</button>
+            <div id="modal-body">
+                <div class="arabic-text" id="ar-txt">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+                <div class="urdu-text" id="ur-txt">تحقیق و ترتیب: حسن جتوئی</div>
+                <button class="copy-btn" onclick="copyContent(this)">تحریر کاپی کریں</button>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="footer-logo">حسن جتوئی پورٹل</div>
+        <p style="font-size: 2rem; margin-bottom: 15px; color: var(--gold-color);">حسن جتوئی پورٹل</p>
         <p>جملہ علمی و تحقیقی حقوق بحقِ مصنف محفوظ ہیں۔ 2026 ©</p>
-        <p style="margin-top: 15px; font-size: 0.9rem;">Powered by Digital Insight | All Rights Reserved</p>
     </footer>
 
     <script>
-        const masomeen = ["محمد مصطفیٰ ﷺ", "فاطمہ زہراؑ", "علی المرتضیٰؑ", "حسن مجتبیٰؑ", "حسینِ سید الشہداءؑ", "علی زین العابدینؑ", "محمد باقرؑ", "جعفر صادقؑ", "موسیٰ کاظمؑ", "علی رضاؑ", "محمد تقیؑ", "علی نقیؑ", "حسن عسکریؑ", "امام مہدیؑ"];
-        const aimma = ["امام علیؑ", "امام حسنؑ", "امام حسینؑ", "امام سجادؑ", "امام باقرؑ", "امام صادقؑ", "امام کاظمؑ", "امام رضاؑ", "امام تقیؑ", "امام نقیؑ", "امام عسکریؑ", "امام مہدیؑ"];
+        const mNames = ["محمد مصطفیٰ ﷺ", "فاطمہ زہراؑ", "علی المرتضیٰؑ", "حسن مجتبیٰؑ", "حسینِ سید الشہداءؑ", "علی زین العابدینؑ", "محمد باقرؑ", "جعفر صادقؑ", "موسیٰ کاظمؑ", "علی رضاؑ", "محمد تقیؑ", "علی نقیؑ", "حسن عسکریؑ", "امام مہدیؑ"];
+        const iNames = ["امام علیؑ", "امام حسنؑ", "امام حسینؑ", "امام سجادؑ", "امام باقرؑ", "امام صادقؑ", "امام کاظمؑ", "امام رضاؑ", "امام تقیؑ", "امام نقیؑ", "امام عسکریؑ", "امام مہدیؑ"];
 
-        const mGrid = document.getElementById('masomeen-grid');
-        masomeen.forEach(n => {
-            mGrid.innerHTML += `
-                <div class="content-card" onclick="openPortal('${n}')">
-                    <h3>${n}</h3>
-                    <div style="font-family:var(--font-urdu); color:var(--gold); font-size:0.9rem;">مقالہ از حسن جتوئی</div>
-                </div>
-            `;
+        const mGrid = document.getElementById('m-grid');
+        mNames.forEach(n => {
+            mGrid.innerHTML += `<div class="card" onclick="openViewer('${n}')"><h3>${n}</h3><small style="font-family:var(--font-urdu); color:#888;">مقالہ از حسن جتوئی</small></div>`;
         });
 
-        const aGrid = document.getElementById('aimma-grid');
-        aimma.forEach(n => {
-            aGrid.innerHTML += `
-                <div class="content-card" onclick="openPortal('${n}')">
-                    <h3>${n}</h3>
-                    <div style="font-family:var(--font-urdu); color:var(--emerald); font-size:0.9rem;">خصوصی تذکرہ</div>
-                </div>
-            `;
+        const iGrid = document.getElementById('i-grid');
+        iNames.forEach(n => {
+            iGrid.innerHTML += `<div class="card" onclick="openViewer('${n}')"><h3>${n}</h3><small style="font-family:var(--font-urdu); color:#888;">تحقیق و ترتیب</small></div>`;
         });
 
-        function openPortal(name) {
-            const modal = document.getElementById('portal-viewer');
-            const ar = document.getElementById('arabic-part');
-            const ur = document.getElementById('urdu-part');
-
-            ar.innerText = "إِنَّمَا يُرِيدُ اللَّهُ لِيُذْهِبَ عَنكُمُ الرِّجْسَ أَهْلَ الْبَيْتِ وَيُطَهِّرَكُمْ تَطْهِيرًا";
-            ur.innerText = `حضرت ${name} کے فضائل و سیرت پر مشتمل یہ خصوصی مقالہ حسن جتوئی کی برسوں کی تحقیق کا نتیجہ ہے۔ اہل بیتؑ کی محبت ایمان کی روح ہے۔`;
-            
-            modal.style.display = 'block';
+        function openViewer(name) {
+            document.getElementById('ar-txt').innerText = "إِنَّمَا يُرِيدُ اللَّهُ لِيُذْهِبَ عَنكُمُ الرِّجْسَ أَهْلَ الْبَيْتِ وَيُطَهِّرَكُمْ تَطْهِيرًا";
+            document.getElementById('ur-txt').innerText = `حضرت ${name} کے فضائل و مناقب پر مشتمل یہ علمی مقالہ حسن جتوئی کی تحقیق کا نچوڑ ہے۔ اہل بیتؑ کی محبت ہی صراطِ مستقیم ہے۔`;
+            document.getElementById('viewer').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
 
-        function closePortal() {
-            document.getElementById('portal-viewer').style.display = 'none';
+        function closeViewer() {
+            document.getElementById('viewer').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
-        function copyToClipboard(btn) {
-            const content = document.getElementById('actual-content').innerText.replace('تحریر کاپی کریں', '') + "\n\nماخذ: حسن جتوئی آفیشل پورٹل";
-            
-            const dummy = document.createElement('textarea');
-            dummy.value = content;
-            document.body.appendChild(dummy);
-            dummy.select();
+        function copyContent(btn) {
+            const fullText = document.getElementById('modal-body').innerText.replace('تحریر کاپی کریں', '') + "\n\nماخذ: حسن جتوئی آفیشل پورٹل";
+            const el = document.createElement('textarea');
+            el.value = fullText;
+            document.body.appendChild(el);
+            el.select();
             document.execCommand('copy');
-            document.body.removeChild(dummy);
+            document.body.removeChild(el);
 
-            const toast = document.getElementById('toast-msg');
+            const toast = document.getElementById('toast');
             toast.style.display = 'block';
             setTimeout(() => toast.style.display = 'none', 3000);
 
             btn.innerText = "کامیابی سے کاپی ہو گئی ✓";
-            btn.style.background = "#27ae60";
-            setTimeout(() => {
-                btn.innerText = "تحریر کاپی کریں";
-                btn.style.background = "var(--emerald)";
-            }, 2000);
+            setTimeout(() => btn.innerText = "تحریر کاپی کریں", 2000);
         }
 
         window.onclick = function(e) {
-            if(e.target == document.getElementById('portal-viewer')) closePortal();
+            if(e.target == document.getElementById('viewer')) closeViewer();
         }
     </script>
 </body>
