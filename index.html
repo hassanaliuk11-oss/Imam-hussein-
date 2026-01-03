@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نجات کی کشتی | حسن جتوئی آفیشل</title>
     
-    <!-- Premium Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
@@ -17,217 +16,73 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #fdfdfd; color: #222; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 
-        body {
-            background-color: #fdfdfd;
-            color: #222;
-            font-family: 'Segoe UI', sans-serif;
-            overflow-x: hidden;
-        }
+        /* Headers */
+        .top-banner { width: 100%; height: auto; max-height: 500px; overflow: hidden; border-bottom: 6px solid var(--gold); background: #000; }
+        .top-banner img { width: 100%; height: auto; display: block; object-fit: contain; }
 
-        /* Main Header */
-        .top-banner {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            overflow: hidden;
-            border-bottom: 6px solid var(--gold);
-            background: #000;
-        }
-        .top-banner img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-        }
+        .title-box { text-align: center; padding: 40px 20px; }
+        .ar-title { font-family: var(--font-arabic); font-size: clamp(2.2rem, 7vw, 4.5rem); color: var(--primary); line-height: 1.2; }
+        .ur-title { font-family: var(--font-urdu); font-size: clamp(1.6rem, 4.5vw, 2.8rem); color: var(--gold); margin-top: 15px; }
 
-        /* Title Section */
-        .title-box {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .ar-title { 
-            font-family: var(--font-arabic); 
-            font-size: clamp(2.2rem, 7vw, 4.5rem); 
-            color: var(--primary);
-            line-height: 1.2;
-        }
-        .ur-title { 
-            font-family: var(--font-urdu); 
-            font-size: clamp(1.6rem, 4.5vw, 2.8rem); 
-            color: var(--gold);
-            margin-top: 15px;
-        }
-
-        /* Lists Wrapper */
-        .lists-wrapper {
-            background: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .row-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 10px 15px;
-            gap: 15px;
-        }
-
-        .name-tag {
-            padding: 12px 22px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50px;
-            font-family: var(--font-urdu);
-            font-size: 1.2rem;
-            border: 2px solid var(--gold);
-            white-space: nowrap;
-        }
-
-        .imam-tag {
-            background: white;
-            color: #111;
-            border: 3px solid;
-            animation: border-glow 5s infinite alternate;
-        }
-
+        /* Lists */
+        .lists-wrapper { background: white; padding: 20px 0; text-align: center; }
+        .row-list { display: flex; justify-content: center; flex-wrap: wrap; padding: 10px 15px; gap: 15px; }
+        .name-tag { padding: 12px 22px; background: var(--primary); color: white; border-radius: 50px; font-family: var(--font-urdu); font-size: 1.2rem; border: 2px solid var(--gold); white-space: nowrap; }
+        
+        .imam-tag { background: white; color: #111; border: 3px solid; animation: border-glow 5s infinite alternate; }
         @keyframes border-glow {
             0% { border-color: #e74c3c; box-shadow: 0 0 10px rgba(231, 76, 60, 0.5); }
             50% { border-color: #2ecc71; box-shadow: 0 0 10px rgba(46, 204, 113, 0.5); }
             100% { border-color: #3498db; box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); }
         }
 
-        /* Salawat Section */
-        .salawat-section {
-            text-align: center;
-            padding: 40px 20px;
-            background: #000;
-            margin: 20px 0;
-            border-top: 4px solid var(--gold);
-            border-bottom: 4px solid var(--gold);
-        }
-        .salawat-ar {
-            font-family: var(--font-arabic);
-            font-size: clamp(2.2rem, 7vw, 4rem);
-            animation: salawat-color 8s infinite;
-            margin-bottom: 15px;
-        }
-        @keyframes salawat-color {
-            0%, 100% { color: #fff; text-shadow: 0 0 10px #fff; }
-            50% { color: var(--gold); text-shadow: 0 0 20px var(--gold); }
-        }
+        /* Salawat */
+        .salawat-section { text-align: center; padding: 40px 20px; background: #000; margin: 20px 0; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); }
+        .salawat-ar { font-family: var(--font-arabic); font-size: clamp(2.2rem, 7vw, 4rem); animation: salawat-color 8s infinite; margin-bottom: 15px; }
+        @keyframes salawat-color { 0%, 100% { color: #fff; text-shadow: 0 0 10px #fff; } 50% { color: var(--gold); text-shadow: 0 0 20px var(--gold); } }
         .salawat-ur { font-family: var(--font-urdu); font-size: 1.5rem; color: #ccc; }
 
-        /* Rainbow Divider */
-        .rainbow-divider {
-            height: 12px;
-            width: 90%;
-            background: linear-gradient(to right, #e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6, #e67e22, #e74c3c);
-            margin: 50px auto;
-            border-radius: 10px;
-            background-size: 200% 100%;
-            animation: rainbow-move 3s linear infinite;
-        }
+        .rainbow-divider { height: 12px; width: 90%; background: linear-gradient(to right, #e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6, #e67e22, #e74c3c); margin: 50px auto; border-radius: 10px; background-size: 200% 100%; animation: rainbow-move 3s linear infinite; }
         @keyframes rainbow-move { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
 
-        /* Folders Section */
-        .folder-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .folder {
-            background: #fff;
-            border-radius: 25px;
-            padding: 50px 30px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
-            border-bottom: 8px solid var(--primary);
-            cursor: pointer;
-            transition: 0.4s;
-            min-height: 280px;
-        }
+        /* Folders */
+        .folder-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; padding: 20px; max-width: 1200px; margin: 0 auto; }
+        .folder { background: #fff; border-radius: 25px; padding: 50px 30px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.07); border-bottom: 8px solid var(--primary); cursor: pointer; transition: 0.4s; min-height: 280px; }
         .folder:hover { transform: translateY(-10px); border-color: var(--gold); }
         .folder-icon { font-size: 4.5rem; margin-bottom: 20px; }
 
-        /* Modal / Folder Content */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.98);
-            z-index: 10000;
-            display: none;
-            overflow-y: auto;
-        }
-        .modal-content {
-            background: #fff;
-            width: 95%;
-            max-width: 1100px;
-            margin: 20px auto;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-        }
-        .modal-header-img {
-            width: 100%;
-            max-height: 350px;
-            object-fit: cover;
-            border-bottom: 5px solid var(--gold);
-        }
-        .modal-body { padding: 40px 20px; }
-        .close-btn {
-            position: absolute;
-            top: 15px; left: 15px;
-            background: #e74c3c;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: var(--font-urdu);
-            z-index: 11;
-        }
+        /* Modal Overlay */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 10000; display: none; overflow-y: auto; }
+        .modal-content { background: #fff; width: 95%; max-width: 1100px; margin: 20px auto; border-radius: 20px; overflow: hidden; position: relative; padding-bottom: 40px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+        .modal-header-img { width: 100%; max-height: 350px; object-fit: cover; border-bottom: 5px solid var(--gold); }
+        .modal-body { padding: 30px 20px; }
+        .close-btn { position: absolute; top: 15px; left: 15px; background: #e74c3c; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-family: var(--font-urdu); z-index: 11; font-weight: bold; }
 
-        /* Intro Section */
-        .intro-section {
-            max-width: 1000px;
-            margin: 80px auto;
-            padding: 50px 30px;
-            background: #fff;
-            border-radius: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-            text-align: center;
-            border: 3px dashed var(--gold);
-        }
-        .intro-section p { font-family: var(--font-urdu); font-size: 1.4rem; line-height: 2.3; }
+        /* Document List Styling */
+        .doc-item { padding: 20px; border-bottom: 1px solid #eee; font-family: var(--font-urdu); cursor: pointer; transition: 0.2s; background: #fff; margin-bottom: 8px; border-right: 6px solid var(--primary); border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .doc-item:hover { background: #f0f9f7; transform: translateX(-5px); }
+        .doc-title { font-weight: bold; color: var(--primary); font-size: 1.4rem; margin-bottom: 8px; display: block; }
+        .doc-preview { font-size: 1.1rem; color: #666; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-        footer {
-            background: #000;
-            color: #999;
-            padding: 80px 20px;
-            text-align: center;
-            font-family: var(--font-urdu);
-            border-top: 6px solid var(--gold);
-        }
+        /* Content View */
+        #content-view { display: none; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .view-header { border-bottom: 2px solid var(--gold); padding-bottom: 15px; margin-bottom: 25px; text-align: center; }
+        .view-ar-intro { font-family: var(--font-arabic); font-size: 1.8rem; color: var(--gold); margin-bottom: 10px; }
+        .view-ar-text { font-family: var(--font-arabic); font-size: clamp(1.8rem, 5vw, 2.5rem); color: var(--primary); text-align: center; margin-bottom: 30px; line-height: 1.8; background: #f9fdfc; padding: 25px; border-radius: 15px; border: 1px solid #e0f2f1; }
+        .view-ur-title { font-family: var(--font-urdu); font-size: 1.4rem; color: var(--gold); margin-bottom: 10px; border-right: 4px solid var(--gold); padding-right: 10px; display: inline-block; }
+        .view-ur-text { font-family: var(--font-urdu); font-size: 1.5rem; color: #333; text-align: justify; line-height: 2.2; background: #fff; padding: 25px; border-radius: 15px; border: 1px solid #eee; box-shadow: inset 0 0 10px rgba(0,0,0,0.02); }
 
-        .doc-item {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            font-family: var(--font-urdu);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .doc-item:hover { background: #f9f9f9; }
+        .back-btn { margin-bottom: 25px; border: none; background: var(--primary); color: white; padding: 10px 25px; border-radius: 10px; cursor: pointer; font-family: var(--font-urdu); font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+
+        footer { background: #000; color: #999; padding: 80px 20px; text-align: center; font-family: var(--font-urdu); border-top: 6px solid var(--gold); }
     </style>
 </head>
 <body>
 
-    <!-- Main Header -->
     <header class="top-banner">
         <img src="https://i.ibb.co/whb2dctW/1000208078.jpg" alt="Main Header">
     </header>
@@ -239,30 +94,16 @@
 
     <div class="lists-wrapper">
         <div class="row-list">
-            <div class="name-tag">محمد مصطفیٰ ﷺ</div>
-            <div class="name-tag">علی المرتضیٰؑ</div>
-            <div class="name-tag">فاطمہ زہراؑ</div>
-            <div class="name-tag">حسن مجتبیٰؑ</div>
-            <div class="name-tag">حسینِ کربلاؑ</div>
+            <div class="name-tag">محمد مصطفیٰ ﷺ</div><div class="name-tag">علی المرتضیٰؑ</div><div class="name-tag">فاطمہ زہراؑ</div><div class="name-tag">حسن مجتبیٰؑ</div><div class="name-tag">حسینِ کربلاؑ</div>
         </div>
     </div>
 
     <div class="lists-wrapper" style="background: #fafafa; border-top: 1px solid #eee;">
         <div class="row-list">
-            <div class="name-tag imam-tag">امام علیؑ</div>
-            <div class="name-tag imam-tag">امام حسنؑ</div>
-            <div class="name-tag imam-tag">امام حسینؑ</div>
-            <div class="name-tag imam-tag">امام سجادؑ</div>
-            <div class="name-tag imam-tag">امام باقرؑ</div>
-            <div class="name-tag imam-tag">امام صادقؑ</div>
+            <div class="name-tag imam-tag">امام علیؑ</div><div class="name-tag imam-tag">امام حسنؑ</div><div class="name-tag imam-tag">امام حسینؑ</div><div class="name-tag imam-tag">امام سجادؑ</div><div class="name-tag imam-tag">امام باقرؑ</div><div class="name-tag imam-tag">امام صادقؑ</div>
         </div>
         <div class="row-list">
-            <div class="name-tag imam-tag">امام کاظمؑ</div>
-            <div class="name-tag imam-tag">امام رضاؑ</div>
-            <div class="name-tag imam-tag">امام تقیؑ</div>
-            <div class="name-tag imam-tag">امام نقیؑ</div>
-            <div class="name-tag imam-tag">امام عسکریؑ</div>
-            <div class="name-tag imam-tag">امام مہدیؑ</div>
+            <div class="name-tag imam-tag">امام کاظمؑ</div><div class="name-tag imam-tag">امام رضاؑ</div><div class="name-tag imam-tag">امام تقیؑ</div><div class="name-tag imam-tag">امام نقیؑ</div><div class="name-tag imam-tag">امام عسکریؑ</div><div class="name-tag imam-tag">امام مہدیؑ</div>
         </div>
     </div>
 
@@ -273,118 +114,140 @@
 
     <div class="rainbow-divider"></div>
 
-    <!-- Folders -->
     <div class="folder-grid">
         <div class="folder" onclick="openFolder(1)">
             <div class="folder-icon">📂</div>
-            <h3>عشق آلِ رسول و اولاد علی ابن ابی طالب علیہ السلام</h3>
-            <p style="font-family: var(--font-urdu); color: #888; margin-top: 15px;">ذخیرہ احادیث و مستند دستاویزات</p>
+            <h3 style="font-family: var(--font-urdu);">عشق آلِ رسول و اولاد علی ابن ابی طالب علیہ السلام</h3>
+            <p style="font-family: var(--font-urdu); color: #888; margin-top: 15px;">40 مبارک احادیث کا مستند ذخیرہ</p>
         </div>
         <div class="folder" onclick="openFolder(2)">
             <div class="folder-icon">📚</div>
-            <h3>عشق راہِ نجات ہے</h3>
+            <h3 style="font-family: var(--font-urdu);">عشق راہِ نجات ہے</h3>
             <p style="font-family: var(--font-urdu); color: #888; margin-top: 15px;">علمی و تحقیقی مجموعہ</p>
         </div>
     </div>
 
-    <section class="intro-section">
-        <h2 style="font-family: var(--font-urdu); color: var(--primary); margin-bottom: 20px;">میرا تعارف</h2>
-        <p>میرا نام حسن جتوئی ہے اور اس پورٹل کو بنانے کا بنیادی مقصد علومِ آلِ محمدؑ کی ترویج اور مستند علمی مواد کو مومنین تک پہنچانا ہے۔</p>
-    </section>
-
-    <!-- Folder Modal -->
+    <!-- Modal for Content -->
     <div id="folder-modal" class="modal-overlay">
         <div class="modal-content">
             <button class="close-btn" onclick="closeFolder()">بند کریں ✕</button>
             <img id="modal-header-img" src="" class="modal-header-img">
             <div class="modal-body">
-                <h2 id="modal-title" style="font-family: var(--font-urdu); color: var(--primary); margin-bottom: 25px;"></h2>
-                <div id="doc-list-container">
-                    <!-- Dynamic Document List -->
+                <h2 id="modal-title" style="font-family: var(--font-urdu); color: var(--primary); margin-bottom: 30px; text-align: center;"></h2>
+                
+                <!-- Full Content View -->
+                <div id="content-view">
+                    <button class="back-btn" onclick="backToList()"><span>←</span> واپس فہرست کی طرف</button>
+                    <div class="view-header">
+                        <div class="view-ar-intro">قَالَ رَسُولُ اللَّهِ ﷺ</div>
+                    </div>
+                    <div id="full-text">
+                        <!-- Arabic and Urdu filled via JS -->
+                    </div>
                 </div>
+
+                <!-- List View -->
+                <div id="doc-list-container"></div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p style="font-size: 2rem; color: #fff; margin-bottom: 20px;">حسن جتوئی آفیشل پورٹل</p>
-        <p>جملہ حقوق محفوظ ہیں۔ © 2026</p>
+        <p style="font-size: 2rem; color: #fff; margin-bottom: 20px; font-family: var(--font-urdu);">حسن جتوئی آفیشل پورٹل</p>
+        <p style="font-family: var(--font-urdu);">جملہ حقوق محفوظ ہیں۔ © 2026</p>
     </footer>
 
     <script>
-        const folderData = {
-    1: {
-        title: "عشق آلِ رسول و اولاد علی ابن ابی طالب علیہ السلام",
-        header: "https://i.ibb.co/qF4HYWvy/1000208066.jpg",
-        docs: [
-            { title: "حدیث 1", text: "قال رسول الله ص أنا مدينة العلم وعلي بابها فمن أراد المدينة فليأت الباب میں علم کا شہر ہوں اور علی اس کا دروازہ ہیں جو شہر چاہتا ہے وہ دروازہ سے آئے" },
-            { title: "حدیث 2", text: "قال رسول الله ص علي مع الحق والحق مع علي علی حق کے ساتھ ہیں اور حق علی کے ساتھ ہے" },
-            { title: "حدیث 3", text: "قال رسول الله ص من كنت مولاه فهذا علي مولاه جس کا میں مولی ہوں یہ علی اس کا مولی ہیں" },
-            { title: "حدیث 4", text: "قال رسول الله ص لا يحبك إلا مؤمن ولا يبغضك إلا منافق آپ سے محبت صرف مومن کرے گا اور آپ سے بغض صرف منافق کرے گا" },
-            { title: "حدیث 5", text: "قال رسول الله ص علي مني وأنا منه علی مجھ سے ہیں اور میں علی سے ہوں" },
-            { title: "حدیث 6", text: "قال رسول الله ص عليكم بعلي فإنه أقضاكم تم سب پر علی کی اتباع کرو وہ تم میں سب سے عدل و انصاف والے ہیں" },
-            { title: "حدیث 7", text: "قال رسول الله ص علي أخي في الدنيا والآخرة علی میرے بھائی ہیں دنیا اور آخرت میں" },
-            { title: "حدیث 8", text: "قال رسول الله ص علي باب حطة من دخلها كان مؤمناً علی باب حطہ ہیں جو اس میں داخل ہوگا وہ مومن ہوگا" },
-            { title: "حدیث 9", text: "قال رسول الله ص أنت مني بمنزلة هارون من موسى إلا أنه لا نبي بعدي آپ میرے لیے ہارون کی طرح ہیں موسیٰ کے ساتھ مگر میرے بعد کوئی نبی نہیں ہے" },
-            { title: "حدیث 10", text: "قال رسول الله ص أنا وعلي أبوا هذه الأمة میں اور علی اس امت کے والد ہیں" },
-            { title: "حدیث 11", text: "قال رسول الله ص النظر إلى وجه علي عبادة علی کا چہرہ دیکھنا عبادت ہے" },
-            { title: "حدیث 12", text: "قال رسول الله ص حب علي حسنة لا تضر معها سيئة علی سے محبت ایک نیکی ہے اس کے ساتھ کوئی برائی نقصان نہیں پہنچا سکتی" },
-            { title: "حدیث 13", text: "قال رسول الله ص علي حبيب الله ورسوله علی اللہ اور اس کے رسول کے محبوب ہیں" },
-            { title: "حدیث 14", text: "قال رسول الله ص علي قسيم الجنة والنار علی جنت اور دوزخ کے حصے دار ہیں" },
-            { title: "حدیث 15", text: "قال رسول الله ص علي صراط مستقيم علی سیدھے راستے پر ہیں" },
-            { title: "حدیث 16", text: "قال رسول الله ص علي خير البشر فمن أبى فقد كفر علی بہترین انسان ہیں جو انکار کرے وہ کافر ہے" },
-            { title: "حدیث 17", text: "قال رسول الله ص علي سيف الله المسلول علی اللہ کا کھلا تلوار ہیں" },
-            { title: "حدیث 18", text: "قال رسول الله ص يا علي أنت وأصحابك في الجنة اے علی آپ اور آپ کے صحابہ جنت میں ہیں" },
-            { title: "حدیث 19", text: "قال رسول الله ص علي يعسوب الدين علی دین کے مضبوط ستون ہیں" },
-            { title: "حدیث 20", text: "قال رسول الله ص يا علي حربك حربي وسلمك سلمي اے علی آپ کی جنگ میری جنگ ہے اور آپ کا امن میرا امن ہے" },
-            { title: "حدیث 21", text: "قال رسول الله ص علي يد الحق علی حق کا ہاتھ ہیں" },
-            { title: "حدیث 22", text: "قال رسول الله ص علي راية الهدى علی ہدایت کا علم ہیں" },
-            { title: "حدیث 23", text: "قال رسول الله ص علي ناصر الدين علی دین کے مددگار ہیں" },
-            { title: "حدیث 24", text: "قال رسول الله ص علي ولي كل مؤمن بعدي علی ہر مومن کے ولی ہیں میرے بعد" },
-            { title: "حدیث 25", text: "قال رسول الله ص ذكر علي عبادة علی کا ذکر عبادت ہے" },
-            { title: "حدیث 26", text: "قال رسول الله ص علي إمام البررة علی پرہیزگاروں کے امام ہیں" },
-            { title: "حدیث 27", text: "قال رسول الله ص علي مع القرآن والقرآن مع علي علی قرآن کے ساتھ ہیں اور قرآن علی کے ساتھ ہے" },
-            { title: "حدیث 28", text: "قال رسول الله ص يا علي أنت أول من يدخل الجنة اے علی آپ سب سے پہلے جنت میں داخل ہوں گے" },
-            { title: "حدیث 29", text: "قال رسول الله ص علي أخي ووزيري علی میرے بھائی اور وزیر ہیں" },
-            { title: "حدیث 30", text: "قال رسول الله ص علي قائد الغر المحجلين علی سفید عمامہ والوں کے سردار ہیں" },
-            { title: "حدیث 31", text: "قال رسول الله ص يا علي أنت مني وأنا منك اے علی آپ مجھ سے ہیں اور میں آپ سے ہوں" },
-            { title: "حدیث 32", text: "قال رسول الله ص يا علي أنت أحب الناس إلي اے علی آپ میرے نزدیک سب سے محبوب ہیں" },
-            { title: "حدیث 33", text: "قال رسول الله ص علي إمام المتقين علی متقیوں کے امام ہیں" },
-            { title: "حدیث 34", text: "قال رسول الله ص علي أقدم الناس إيماناً علی سب سے پہلے ایمان لانے والے ہیں" },
-            { title: "حدیث 35", text: "قال رسول الله ص علي يد الحق المبسوطة علی حق کے کھلے ہاتھ ہیں" },
-            { title: "حدیث 36", text: "قال رسول الله ص علي نور المؤمنين علی مومنین کے نور ہیں" },
-            { title: "حدیث 37", text: "قال رسول الله ص علي كنز الإيمان علی ایمان کا خزانہ ہیں" },
-            { title: "حدیث 38", text: "قال رسول الله ص علي تاج الأولياء علی اولیاء کا تاج ہیں" },
-            { title: "حدیث 39", text: "قال رسول الله ص علي أقرب الناس إلى الله ورسوله علی اللہ اور اس کے رسول کے سب سے قریب ہیں" },
-            { title: "حدیث 40", text: "قال رسول الله ص يا علي أنت باب حطة من دخله نجا اے علی آپ باب حطہ ہیں جو اس میں داخل ہوگا وہ نجات پائے گا" }
-        ]
-    }
-};
-            2: {
-                title: "عشق راہِ نجات ہے",
-                header: "https://i.ibb.co/ZRTmQkbF/1000208080.jpg"
-            }
-        };
+        const h_docs = [
+            { id: 1, ar: "أَنَا مَدِينَةُ الْعِلْمِ وَعَلِيٌّ بَابُهَا فَمَنْ أَرَادَ الْمَدِينَةَ فَلْيَأْتِ الْبَابَ", ur: "میں علم کا شہر ہوں اور علیؑ اس کا دروازہ ہیں، جو شخص شہر (علم) میں داخل ہونا چاہتا ہے اسے چاہیے کہ وہ دروازے سے آئے۔" },
+            { id: 2, ar: "عَلِيٌّ مَعَ الْحَقِّ وَالْحَقُّ مَعَ عَلِيٍّ", ur: "علیؑ حق کے ساتھ ہیں اور حق علیؑ کے ساتھ ہے۔" },
+            { id: 3, ar: "مَنْ كُنْتُ مَوْلَاهُ فَهَذَا عَلِيٌّ مَوْلَاهُ", ur: "جس کا میں مولیٰ ہوں، یہ علیؑ اس کے مولیٰ ہیں۔" },
+            { id: 4, ar: "لَا يُحِبُّكَ إِلَّا مُؤْمِنٌ وَلَا يُبْغِضُكَ إِلَّا مُنَافِقٌ", ur: "اے علیؑ! آپ سے محبت صرف مومن ہی کرے گا اور آپ سے بغض صرف منافق ہی رکھے گا۔" },
+            { id: 5, ar: "عَلِيٌّ مِنِّي وَأَنَا مِنْهُ", ur: "علیؑ مجھ سے ہیں اور میں علیؑ سے ہوں۔" },
+            { id: 6, ar: "عَلَيْكُمْ بِعَلِيٍّ فَإِنَّهُ أَقْضَاكُمْ", ur: "تم سب پر علیؑ کی اتباع لازم ہے کیونکہ وہ تم میں سب سے زیادہ عدل و انصاف (فیصلہ) کرنے والے ہیں۔" },
+            { id: 7, ar: "عَلِيٌّ أَخِي فِي الدُّنْيَا وَالْآخِرَةِ", ur: "علیؑ دنیا اور آخرت میں میرے بھائی ہیں۔" },
+            { id: 8, ar: "عَلِيٌّ بَابُ حِطَّةٍ مَنْ دَخَلَهَا كَانَ مُؤْمِناً", ur: "علیؑ بابِ حطہ ہیں، جو اس میں داخل ہو گیا وہ مومن ہو گیا۔" },
+            { id: 9, ar: "أَنْتَ مِنِّي بِمَنْزِلَةِ هَارُونَ مِنْ مُوسَى إِلَّا أَنَّهُ لَا نَبِيَّ بَعْدِي", ur: "آپ میرے لیے ایسے ہی ہیں جیسے موسیٰؑ کے لیے ہارونؑ تھے، مگر یہ کہ میرے بعد کوئی نبی نہیں ہے۔" },
+            { id: 10, ar: "أَنَا وَعَلِيٌّ أَبَوَا هَذِهِ الْأُمَّةِ", ur: "میں اور علیؑ اس امت کے والد ہیں۔" },
+            { id: 11, ar: "النَّظَرُ إِلَى وَجْهِ عَلِيٍّ عِبَادَةٌ", ur: "علیؑ کے چہرہ مبارک کی طرف دیکھنا عبادت ہے۔" },
+            { id: 12, ar: "حُبُّ عَلِيٍّ حَسَنَةٌ لَا تَضُرُّ مَعَهَا سَيِّئَةٌ", ur: "علیؑ کی محبت ایسی نیکی ہے جس کے ہوتے ہوئے کوئی برائی (نقصان) نہیں پہنچا سکتی۔" },
+            { id: 13, ar: "عَلِيٌّ حَبِيبُ اللَّهِ وَرَسُولِهِ", ur: "علیؑ اللہ اور اس کے رسول کے محبوب ہیں۔" },
+            { id: 14, ar: "عَلِيٌّ قَسِيمُ الْجَنَّةِ وَالنَّارِ", ur: "علیؑ جنت اور دوزخ تقسیم کرنے والے ہیں۔" },
+            { id: 15, ar: "عَلِيٌّ صِرَاطٌ مُسْتَقِيمٌ", ur: "علیؑ ہی سیدھا راستہ ہیں۔" },
+            { id: 16, ar: "عَلِيٌّ خَيْرُ الْبَشَرِ فَمَنْ أَبَى فَقَدْ كَفَرَ", ur: "علیؑ بہترین بشر ہیں، جس نے انکار کیا وہ کفر کی راہ پر ہے۔" },
+            { id: 17, ar: "عَلِيٌّ سَيْفُ اللَّهِ الْمَسْلُولُ", ur: "علیؑ اللہ کی نیام سے نکلی ہوئی تلوار ہیں۔" },
+            { id: 18, ar: "يَا عَلِيُّ أَنْتَ وَأَصْحَابُكَ فِي الْجَنَّةِ", ur: "اے علیؑ! آپ اور آپ کے ساتھی (شیعہ) جنت میں ہوں گے۔" },
+            { id: 19, ar: "عَلِيٌّ يَعْسُوبُ الدِّينِ", ur: "علیؑ دین کے سردار (مضبوط ستون) ہیں۔" },
+            { id: 20, ar: "يَا عَلِيُّ حَرْبُكَ حَرْبِي وَسِلْمُكَ سِلْمِي", ur: "اے علیؑ! آپ کی جنگ میری جنگ ہے اور آپ کی صلح میری صلح ہے۔" },
+            { id: 21, ar: "عَلِيٌّ يَدُ الْحَقِّ", ur: "علیؑ حق کا ہاتھ ہیں۔" },
+            { id: 22, ar: "عَلِيٌّ رَايَةُ الْهُدَى", ur: "علیؑ ہدایت کا پرچم ہیں۔" },
+            { id: 23, ar: "عَلِيٌّ نَاصِرُ الدِّينِ", ur: "علیؑ دین کے مددگار ہیں۔" },
+            { id: 24, ar: "عَلِيٌّ وَلِيُّ كُلِّ مُؤْمِنٍ بَعْدِي", ur: "علیؑ میرے بعد ہر مومن کے ولی ہیں۔" },
+            { id: 25, ar: "ذِكْرُ عَلِيٍّ عِبَادَةٌ", ur: "علیؑ کا ذکر کرنا عبادت ہے۔" },
+            { id: 26, ar: "عَلِيٌّ إِمَامُ الْبَرَرَةِ", ur: "علیؑ نیکوکاروں کے امام ہیں۔" },
+            { id: 27, ar: "عَلِيٌّ مَعَ الْقُرْآنِ وَالْقُرْآنُ مَعَ عَلِيٍّ", ur: "علیؑ قرآن کے ساتھ ہیں اور قرآن علیؑ کے ساتھ ہے۔" },
+            { id: 28, ar: "يَا عَلِيُّ أَنْتَ أَوَّلُ مَنْ يَدْخُلُ الْجَنَّةَ", ur: "اے علیؑ! آپ سب سے پہلے جنت میں داخل ہوں گے۔" },
+            { id: 29, ar: "عَلِيٌّ أَخِي وَوَزِيرِي", ur: "علیؑ میرے بھائی اور میرے وزیر ہیں۔" },
+            { id: 30, ar: "عَلِيٌّ قَائِدُ الْغُرِّ الْمُحَجَّلِينَ", ur: "علیؑ سفید پیشانی والوں (اہلِ ایمان) کے قائد ہیں۔" },
+            { id: 31, ar: "يَا عَلِيُّ أَنْتَ مِنِّي وَأَنَا مِنْكَ", ur: "اے علیؑ! آپ مجھ سے ہیں اور میں آپ سے ہوں۔" },
+            { id: 32, ar: "يَا عَلِيُّ أَنْتَ أَحَبُّ النَّاسِ إِلَيَّ", ur: "اے علیؑ! آپ تمام لوگوں میں مجھے سب سے زیادہ محبوب ہیں۔" },
+            { id: 33, ar: "عَلِيٌّ إِمَامُ الْمُتَّقِينَ", ur: "علیؑ متقیوں کے امام ہیں۔" },
+            { id: 34, ar: "عَلِيٌّ أَقْدَمُ النَّاسِ إِيمَاناً", ur: "علیؑ سب لوگوں سے پہلے ایمان لانے والے ہیں۔" },
+            { id: 35, ar: "عَلِيٌّ يَدُ الْحَقِّ الْمَبْسُوطَةُ", ur: "علیؑ حق کا پھیلا ہوا ہاتھ ہیں۔" },
+            { id: 36, ar: "عَلِيٌّ نُورُ الْمُؤْمِنِينَ", ur: "علیؑ مومنین کا نور ہیں۔" },
+            { id: 37, ar: "عَلِيٌّ كَنْزُ الْإِيمَانِ", ur: "علیؑ ایمان کا خزانہ ہیں۔" },
+            { id: 38, ar: "عَلِيٌّ تَاجُ الْأَوْلِيَاءِ", ur: "علیؑ اولیاء کا تاج ہیں۔" },
+            { id: 39, ar: "عَلِيٌّ أَقْرَبُ النَّاسِ إِلَى اللَّهِ وَرَسُولِهِ", ur: "علیؑ اللہ اور اس کے رسول کے سب سے قریب ہیں۔" },
+            { id: 40, ar: "يَا عَلِيُّ أَنْتَ بَابُ حِطَّةٍ مَنْ دَخَلَهُ نَجَا", ur: "اے علیؑ! آپ بابِ حطہ ہیں، جو اس میں داخل ہو گیا وہ نجات پا گیا۔" }
+        ];
 
         function openFolder(id) {
-            const data = folderData[id];
-            document.getElementById('modal-header-img').src = data.header;
-            document.getElementById('modal-title').innerText = data.title;
-            
             const list = document.getElementById('doc-list-container');
-            list.innerHTML = "";
-            // Sample for 15 docs (Can be thousands)
-            for(let i=1; i<=15; i++) {
-                list.innerHTML += `
-                    <div class="doc-item">
-                        <span>مقالہ / حدیث نمبر ${i}</span>
-                        <button style="background:var(--gold); border:none; padding:5px 15px; border-radius:5px; cursor:pointer; font-family:var(--font-urdu);">پڑھیے</button>
-                    </div>
-                `;
-            }
+            const headerImg = document.getElementById('modal-header-img');
+            const title = document.getElementById('modal-title');
             
+            backToList();
+            list.innerHTML = "";
+
+            if(id === 1) {
+                headerImg.src = "https://i.ibb.co/qF4HYWvy/1000208066.jpg";
+                title.innerText = "عشق آلِ رسول و اولاد علی ابن ابی طالب علیہ السلام";
+                h_docs.forEach((doc) => {
+                    list.innerHTML += `
+                        <div class="doc-item" onclick="showContent(${doc.id})">
+                            <span class="doc-title">حدیث مبارک نمبر ${doc.id}</span>
+                            <span class="doc-preview">${doc.ar}</span>
+                        </div>
+                    `;
+                });
+            } else {
+                headerImg.src = "https://i.ibb.co/ZRTmQkbF/1000208080.jpg";
+                title.innerText = "عشق راہِ نجات ہے";
+                list.innerHTML = "<p style='text-align:center; padding:40px; font-family:var(--font-urdu); color:#888;'>اس فولڈر پر تحقیقی کام جاری ہے...</p>";
+            }
+
             document.getElementById('folder-modal').style.display = 'block';
             document.body.style.overflow = 'hidden';
+        }
+
+        function showContent(docId) {
+            const doc = h_docs.find(d => d.id === docId);
+            document.getElementById('doc-list-container').style.display = 'none';
+            const view = document.getElementById('content-view');
+            const fullText = document.getElementById('full-text');
+            
+            fullText.innerHTML = `
+                <div class="view-ar-text">${doc.ar}</div>
+                <div class="view-ur-title">اردو ترجمہ:</div>
+                <div class="view-ur-text">${doc.ur}</div>
+            `;
+            view.style.display = 'block';
+            document.querySelector('.modal-content').scrollTop = 0;
+        }
+
+        function backToList() {
+            document.getElementById('doc-list-container').style.display = 'block';
+            document.getElementById('content-view').style.display = 'none';
         }
 
         function closeFolder() {
@@ -392,9 +255,7 @@
             document.body.style.overflow = 'auto';
         }
 
-        window.onclick = function(e) {
-            if(e.target == document.getElementById('folder-modal')) closeFolder();
-        }
+        window.onclick = function(e) { if(e.target == document.getElementById('folder-modal')) closeFolder(); }
     </script>
 </body>
 </html>
