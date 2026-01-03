@@ -3,333 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-    سفينةُ النَّجاةِ | راہِ نجات کی کشتی
-    </title>
-    <!-- Premium Fonts: Noto Nastaliq for Urdu and Amiri for Arabic -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <title>نجات کی کشتی | حسن جتوئی آفیشل</title>
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-color: #004d40;
-            --gold-color: #d4af37;
-            --text-dark: #1a1a1a;
+            --primary: #004d40;
+            --gold: #d4af37;
             --font-urdu: 'Noto Nastaliq Urdu', serif;
             --font-arabic: 'Amiri', serif;
-
-            /* Fluid Typography - Automatically scales between mobile and desktop */
-            --h1-size: clamp(2rem, 8vw, 5rem);
-            --h2-size: clamp(1.8rem, 5vw, 3rem);
-            --body-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            --arabic-size: clamp(2rem, 7vw, 3.5rem);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: #f9fdfc;
-            color: var(--text-dark);
-            line-height: 1.8;
+            background-color: #fdfdfd;
+            color: #222;
+            font-family: 'Segoe UI', sans-serif;
             overflow-x: hidden;
         }
 
-        /* Image Header Section */
-        header {
+        /* Main Header */
+        .top-banner {
             width: 100%;
-            border-bottom: 6px solid var(--gold-color);
+            height: auto;
+            max-height: 500px;
+            overflow: hidden;
+            border-bottom: 6px solid var(--gold);
             background: #000;
         }
-
-        .header-img {
+        .top-banner img {
             width: 100%;
-            height: clamp(250px, 45vh, 450px);
-            object-fit: cover;
+            height: auto;
             display: block;
+            object-fit: contain;
         }
 
-        /* Branding Overlay */
-        .brand-box {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #000 100%);
+        /* Title Section */
+        .title-box {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .ar-title { 
+            font-family: var(--font-arabic); 
+            font-size: clamp(2.2rem, 7vw, 4.5rem); 
+            color: var(--primary);
+            line-height: 1.2;
+        }
+        .ur-title { 
+            font-family: var(--font-urdu); 
+            font-size: clamp(1.6rem, 4.5vw, 2.8rem); 
+            color: var(--gold);
+            margin-top: 15px;
+        }
+
+        /* Lists Wrapper */
+        .lists-wrapper {
+            background: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .row-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px 15px;
+            gap: 15px;
+        }
+
+        .name-tag {
+            padding: 12px 22px;
+            background: var(--primary);
             color: white;
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .brand-box h1 {
+            border-radius: 50px;
             font-family: var(--font-urdu);
-            font-size: var(--h1-size);
-            line-height: 2.2;
-            color: var(--gold-color);
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            font-size: 1.2rem;
+            border: 2px solid var(--gold);
+            white-space: nowrap;
         }
 
-        /* Author Profile Section */
-        .author-section {
-            max-width: 1000px;
-            margin: -40px auto 60px;
+        .imam-tag {
             background: white;
-            border-radius: 30px;
-            padding: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 10;
-            border-top: 5px solid var(--gold-color);
-            text-align: center;
-        }
-
-        .author-name {
-            font-family: var(--font-urdu);
-            font-size: var(--h2-size);
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .author-bio {
-            font-family: var(--font-urdu);
-            font-size: var(--body-size);
-            line-height: 2.2;
-            color: #444;
-        }
-
-        /* Content Grid */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto 80px;
-            padding: 0 20px;
-        }
-
-        .section-heading {
-            font-family: var(--font-urdu);
-            font-size: var(--h2-size);
-            color: var(--primary-color);
-            margin: 50px 0 30px;
-            border-bottom: 2px solid #ddd;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 25px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            cursor: pointer;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid #f0f0f0;
-        }
-
-        .card:hover {
-            transform: translateY(-15px);
-            border-color: var(--gold-color);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .card h3 {
-            font-family: var(--font-urdu);
-            font-size: clamp(1.4rem, 3.5vw, 2rem);
             color: #111;
+            border: 3px solid;
+            animation: border-glow 5s infinite alternate;
         }
 
-        /* Modal / Viewer */
-        .overlay {
+        @keyframes border-glow {
+            0% { border-color: #e74c3c; box-shadow: 0 0 10px rgba(231, 76, 60, 0.5); }
+            50% { border-color: #2ecc71; box-shadow: 0 0 10px rgba(46, 204, 113, 0.5); }
+            100% { border-color: #3498db; box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); }
+        }
+
+        /* Salawat Section */
+        .salawat-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: #000;
+            margin: 20px 0;
+            border-top: 4px solid var(--gold);
+            border-bottom: 4px solid var(--gold);
+        }
+        .salawat-ar {
+            font-family: var(--font-arabic);
+            font-size: clamp(2.2rem, 7vw, 4rem);
+            animation: salawat-color 8s infinite;
+            margin-bottom: 15px;
+        }
+        @keyframes salawat-color {
+            0%, 100% { color: #fff; text-shadow: 0 0 10px #fff; }
+            50% { color: var(--gold); text-shadow: 0 0 20px var(--gold); }
+        }
+        .salawat-ur { font-family: var(--font-urdu); font-size: 1.5rem; color: #ccc; }
+
+        /* Rainbow Divider */
+        .rainbow-divider {
+            height: 12px;
+            width: 90%;
+            background: linear-gradient(to right, #e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6, #e67e22, #e74c3c);
+            margin: 50px auto;
+            border-radius: 10px;
+            background-size: 200% 100%;
+            animation: rainbow-move 3s linear infinite;
+        }
+        @keyframes rainbow-move { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+
+        /* Folders Section */
+        .folder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .folder {
+            background: #fff;
+            border-radius: 25px;
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            border-bottom: 8px solid var(--primary);
+            cursor: pointer;
+            transition: 0.4s;
+            min-height: 280px;
+        }
+        .folder:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .folder-icon { font-size: 4.5rem; margin-bottom: 20px; }
+
+        /* Modal / Folder Content */
+        .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            backdrop-filter: blur(10px);
-            z-index: 9999;
+            background: rgba(0,0,0,0.98);
+            z-index: 10000;
             display: none;
             overflow-y: auto;
-            padding: 30px 15px;
         }
-
-        .modal {
-            background: white;
-            max-width: 850px;
-            margin: 40px auto;
-            border-radius: 30px;
-            padding: clamp(20px, 6vw, 60px);
+        .modal-content {
+            background: #fff;
+            width: 95%;
+            max-width: 1100px;
+            margin: 20px auto;
+            border-radius: 20px;
+            overflow: hidden;
             position: relative;
         }
-
+        .modal-header-img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-bottom: 5px solid var(--gold);
+        }
+        .modal-body { padding: 40px 20px; }
         .close-btn {
             position: absolute;
-            top: 20px; left: 20px;
-            background: #d32f2f;
+            top: 15px; left: 15px;
+            background: #e74c3c;
             color: white;
             border: none;
-            padding: 10px 25px;
-            border-radius: 10px;
+            padding: 10px 20px;
+            border-radius: 8px;
             cursor: pointer;
             font-family: var(--font-urdu);
+            z-index: 11;
         }
 
-        .arabic-text {
-            font-family: var(--font-arabic);
-            font-size: var(--arabic-size);
-            color: var(--primary-color);
+        /* Intro Section */
+        .intro-section {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 50px 30px;
+            background: #fff;
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
             text-align: center;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            direction: rtl;
+            border: 3px dashed var(--gold);
         }
-
-        .urdu-text {
-            font-family: var(--font-urdu);
-            font-size: var(--body-size);
-            text-align: center;
-            line-height: 2.3;
-            color: #333;
-            margin-bottom: 40px;
-            direction: rtl;
-        }
-
-        .copy-btn {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 20px;
-            border-radius: 50px;
-            font-family: var(--font-urdu);
-            font-size: 1.3rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .copy-btn:hover { background: #000; }
-
-        /* Notification */
-        #toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #27ae60;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-family: var(--font-urdu);
-            display: none;
-            z-index: 10000;
-        }
+        .intro-section p { font-family: var(--font-urdu); font-size: 1.4rem; line-height: 2.3; }
 
         footer {
-            background: #111;
-            color: white;
+            background: #000;
+            color: #999;
             padding: 80px 20px;
             text-align: center;
             font-family: var(--font-urdu);
-            border-top: 5px solid var(--gold-color);
+            border-top: 6px solid var(--gold);
         }
+
+        .doc-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            font-family: var(--font-urdu);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .doc-item:hover { background: #f9f9f9; }
     </style>
 </head>
 <body>
 
-    <div id="toast">تحریر کاپی کر لی گئی ہے! ✓</div>
-
-    <!-- Header Section with your Image -->
-    <header>
-        <img 
-          src="https://hassanaliuk11-oss.github.io/Imam-hussein/panjtan-pak-header.jpg" 
-          alt="Panjtan Pak AS" 
-          class="header-img"
-          onerror="this.src='https://images.unsplash.com/photo-1590076215667-873d1661603d?q=80&w=2000&auto=format&fit=crop'"
-        >
+    <!-- Main Header -->
+    <header class="top-banner">
+        <img src="https://i.ibb.co/whb2dctW/1000208078.jpg" alt="Main Header">
     </header>
 
-    <!-- Brand Title -->
-    <div class="brand-box">
-        <h1>پورٹلِ عشقِ اہلِ بیتؑ</h1>
+    <div class="title-box">
+        <div class="ar-title">سَفِينَةُ النَّجَاةِ</div>
+        <div class="ur-title">نجات کی کشتی</div>
     </div>
 
-    <!-- Hassan Jatoi Profile -->
-    <section class="author-section">
-        <h2 class="author-name">حسن جتوئی آفیشل</h2>
-        <p class="author-bio">
-            خوش آمدید! میرا نام حسن جتوئی ہے اور اس ڈیجیٹل پورٹل پر آپ کو چودہ معصومین علیہم السلام کی سیرت، مناقب اور فضائل پر مبنی میرے مستند تحقیقی مقالات حاصل ہوں گے۔ یہ پلیٹ فارم علومِ آلِ محمدؑ کی ترویج کے لیے وقف ہے۔
-        </p>
+    <div class="lists-wrapper">
+        <div class="row-list">
+            <div class="name-tag">محمد مصطفیٰ ﷺ</div>
+            <div class="name-tag">علی المرتضیٰؑ</div>
+            <div class="name-tag">فاطمہ زہراؑ</div>
+            <div class="name-tag">حسن مجتبیٰؑ</div>
+            <div class="name-tag">حسینِ کربلاؑ</div>
+        </div>
+    </div>
+
+    <div class="lists-wrapper" style="background: #fafafa; border-top: 1px solid #eee;">
+        <div class="row-list">
+            <div class="name-tag imam-tag">امام علیؑ</div>
+            <div class="name-tag imam-tag">امام حسنؑ</div>
+            <div class="name-tag imam-tag">امام حسینؑ</div>
+            <div class="name-tag imam-tag">امام سجادؑ</div>
+            <div class="name-tag imam-tag">امام باقرؑ</div>
+            <div class="name-tag imam-tag">امام صادقؑ</div>
+        </div>
+        <div class="row-list">
+            <div class="name-tag imam-tag">امام کاظمؑ</div>
+            <div class="name-tag imam-tag">امام رضاؑ</div>
+            <div class="name-tag imam-tag">امام تقیؑ</div>
+            <div class="name-tag imam-tag">امام نقیؑ</div>
+            <div class="name-tag imam-tag">امام عسکریؑ</div>
+            <div class="name-tag imam-tag">امام مہدیؑ</div>
+        </div>
+    </div>
+
+    <div class="salawat-section">
+        <div class="salawat-ar">اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَآلِ مُحَمَّدٍ</div>
+        <div class="salawat-ur">اے اللہ! رحمت نازل فرما محمد ﷺ اور آلِ محمدؑ پر</div>
+    </div>
+
+    <div class="rainbow-divider"></div>
+
+    <!-- Folders -->
+    <div class="folder-grid">
+        <div class="folder" onclick="openFolder(1)">
+            <div class="folder-icon">📂</div>
+            <h3>عشق آلِ رسول و اولاد علی ابن ابی طالب علیہ السلام</h3>
+            <p style="font-family: var(--font-urdu); color: #888; margin-top: 15px;">ذخیرہ احادیث و مستند دستاویزات</p>
+        </div>
+        <div class="folder" onclick="openFolder(2)">
+            <div class="folder-icon">📚</div>
+            <h3>عشق راہِ نجات ہے</h3>
+            <p style="font-family: var(--font-urdu); color: #888; margin-top: 15px;">علمی و تحقیقی مجموعہ</p>
+        </div>
+    </div>
+
+    <section class="intro-section">
+        <h2 style="font-family: var(--font-urdu); color: var(--primary); margin-bottom: 20px;">میرا تعارف</h2>
+        <p>میرا نام حسن جتوئی ہے اور اس پورٹل کو بنانے کا بنیادی مقصد علومِ آلِ محمدؑ کی ترویج اور مستند علمی مواد کو مومنین تک پہنچانا ہے۔</p>
     </section>
 
-    <!-- Main Content Container -->
-    <div class="container">
-        
-        <h2 class="section-heading">چودہ معصومین علیہم السلام</h2>
-        <div id="m-grid" class="grid"></div>
-
-        <h2 class="section-heading" style="margin-top: 80px;">بارہ ائمہ معصومینؑ</h2>
-        <div id="i-grid" class="grid"></div>
-
-    </div>
-
-    <!-- Modal Viewer -->
-    <div id="viewer" class="overlay">
-        <div class="modal">
-            <button class="close-btn" onclick="closeViewer()">بند کریں ✕</button>
-            <div id="modal-body">
-                <div class="arabic-text" id="ar-txt">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-                <div class="urdu-text" id="ur-txt">تحقیق و ترتیب: حسن جتوئی</div>
-                <button class="copy-btn" onclick="copyContent(this)">تحریر کاپی کریں</button>
+    <!-- Folder Modal -->
+    <div id="folder-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeFolder()">بند کریں ✕</button>
+            <img id="modal-header-img" src="" class="modal-header-img">
+            <div class="modal-body">
+                <h2 id="modal-title" style="font-family: var(--font-urdu); color: var(--primary); margin-bottom: 25px;"></h2>
+                <div id="doc-list-container">
+                    <!-- Dynamic Document List -->
+                </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p style="font-size: 2rem; margin-bottom: 15px; color: var(--gold-color);">حسن جتوئی پورٹل</p>
-        <p>جملہ علمی و تحقیقی حقوق بحقِ مصنف محفوظ ہیں۔ 2026 ©</p>
+        <p style="font-size: 2rem; color: #fff; margin-bottom: 20px;">حسن جتوئی آفیشل پورٹل</p>
+        <p>جملہ حقوق محفوظ ہیں۔ © 2026</p>
     </footer>
 
     <script>
-        const mNames = ["محمد مصطفیٰ ﷺ", "فاطمہ زہراؑ", "علی المرتضیٰؑ", "حسن مجتبیٰؑ", "حسینِ سید الشہداءؑ", "علی زین العابدینؑ", "محمد باقرؑ", "جعفر صادقؑ", "موسیٰ کاظمؑ", "علی رضاؑ", "محمد تقیؑ", "علی نقیؑ", "حسن عسکریؑ", "امام مہدیؑ"];
-        const iNames = ["امام علیؑ", "امام حسنؑ", "امام حسینؑ", "امام سجادؑ", "امام باقرؑ", "امام صادقؑ", "امام کاظمؑ", "امام رضاؑ", "امام تقیؑ", "امام نقیؑ", "امام عسکریؑ", "امام مہدیؑ"];
+        const folderData = {
+            1: {
+                title: "عشق آلِ رسول و اولاد علی ابن ابی طالب علیہ السلام",
+                header: "https://i.ibb.co/qF4HYWvy/1000208066.jpg"
+            },
+            2: {
+                title: "عشق راہِ نجات ہے",
+                header: "https://i.ibb.co/ZRTmQkbF/1000208080.jpg"
+            }
+        };
 
-        const mGrid = document.getElementById('m-grid');
-        mNames.forEach(n => {
-            mGrid.innerHTML += `<div class="card" onclick="openViewer('${n}')"><h3>${n}</h3><small style="font-family:var(--font-urdu); color:#888;">مقالہ از حسن جتوئی</small></div>`;
-        });
-
-        const iGrid = document.getElementById('i-grid');
-        iNames.forEach(n => {
-            iGrid.innerHTML += `<div class="card" onclick="openViewer('${n}')"><h3>${n}</h3><small style="font-family:var(--font-urdu); color:#888;">تحقیق و ترتیب</small></div>`;
-        });
-
-        function openViewer(name) {
-            document.getElementById('ar-txt').innerText = "إِنَّمَا يُرِيدُ اللَّهُ لِيُذْهِبَ عَنكُمُ الرِّجْسَ أَهْلَ الْبَيْتِ وَيُطَهِّرَكُمْ تَطْهِيرًا";
-            document.getElementById('ur-txt').innerText = `حضرت ${name} کے فضائل و مناقب پر مشتمل یہ علمی مقالہ حسن جتوئی کی تحقیق کا نچوڑ ہے۔ اہل بیتؑ کی محبت ہی صراطِ مستقیم ہے۔`;
-            document.getElementById('viewer').style.display = 'block';
+        function openFolder(id) {
+            const data = folderData[id];
+            document.getElementById('modal-header-img').src = data.header;
+            document.getElementById('modal-title').innerText = data.title;
+            
+            const list = document.getElementById('doc-list-container');
+            list.innerHTML = "";
+            // Sample for 15 docs (Can be thousands)
+            for(let i=1; i<=15; i++) {
+                list.innerHTML += `
+                    <div class="doc-item">
+                        <span>مقالہ / حدیث نمبر ${i}</span>
+                        <button style="background:var(--gold); border:none; padding:5px 15px; border-radius:5px; cursor:pointer; font-family:var(--font-urdu);">پڑھیے</button>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('folder-modal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
 
-        function closeViewer() {
-            document.getElementById('viewer').style.display = 'none';
+        function closeFolder() {
+            document.getElementById('folder-modal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
-        function copyContent(btn) {
-            const fullText = document.getElementById('modal-body').innerText.replace('تحریر کاپی کریں', '') + "\n\nماخذ: حسن جتوئی آفیشل پورٹل";
-            const el = document.createElement('textarea');
-            el.value = fullText;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-
-            const toast = document.getElementById('toast');
-            toast.style.display = 'block';
-            setTimeout(() => toast.style.display = 'none', 3000);
-
-            btn.innerText = "کامیابی سے کاپی ہو گئی ✓";
-            setTimeout(() => btn.innerText = "تحریر کاپی کریں", 2000);
-        }
-
         window.onclick = function(e) {
-            if(e.target == document.getElementById('viewer')) closeViewer();
+            if(e.target == document.getElementById('folder-modal')) closeFolder();
         }
     </script>
 </body>
