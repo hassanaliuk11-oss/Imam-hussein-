@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>سفینہ نجات | حسن بن محمد جتوئی</title>
 
+<!-- Beautiful Arabic & Urdu Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -14,30 +15,134 @@
 --urdu:'Noto Nastaliq Urdu',serif;
 --arabic:'Amiri',serif;
 }
-body{margin:0;background:var(--bg);color:#fff;font-family:'Segoe UI'}
-.hero{height:70vh;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://i.ibb.co/whb2dctW/1000208078.jpg') center/cover;display:flex;flex-direction:column;justify-content:center;align-items:center;border-bottom:5px solid var(--gold)}
-.hero-title{font-family:var(--arabic);font-size:clamp(3.5rem,12vw,6rem);color:var(--gold);text-shadow:0 0 25px gold}
-.hero-subtitle{font-family:var(--urdu);font-size:1.7rem}
-.author-card{max-width:900px;margin:-80px auto 40px;background:#fff;color:#111;padding:40px;border-radius:25px;border:4px solid var(--gold);text-align:center;font-family:var(--urdu)}
-.section-header{font-family:var(--urdu);font-size:2.5rem;color:var(--gold);text-align:center;margin:70px 0 40px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px}
-.tajalli-card{background:#111;border-radius:20px;padding:35px;text-align:center;border:2px solid rgba(255,255,255,.1);transition:.4s;cursor:pointer}
-.tajalli-card:hover{transform:scale(1.06)}
-.card-name{font-size:1.6rem;color:#fff}
-.card-sub{color:var(--gold);font-size:.9rem;margin-top:8px;display:block}
-a{text-decoration:none;color:inherit}
+
+body{
+margin:0;
+background:var(--bg);
+color:#fff;
+font-family:'Segoe UI',sans-serif;
+}
+
+.hero{
+height:70vh;
+background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://i.ibb.co/whb2dctW/1000208078.jpg') center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+border-bottom:5px solid var(--gold);
+text-align:center;
+}
+
+.hero-title{
+font-family:var(--arabic);
+font-size:clamp(3.5rem,12vw,6rem);
+color:var(--gold);
+text-shadow:0 0 25px gold;
+padding:20px;
+}
+
+.hero-subtitle{
+font-family:var(--urdu);
+font-size:1.7rem;
+margin-top:10px;
+}
+
+.author-card{
+max-width:900px;
+margin:-80px auto 40px;
+background:#fff;
+color:#111;
+padding:40px;
+border-radius:25px;
+border:4px solid var(--gold);
+text-align:center;
+font-family:var(--urdu);
+}
+
+.section-header{
+font-family:var(--urdu);
+font-size:2.5rem;
+color:var(--gold);
+text-align:center;
+margin:70px 0 40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+gap:30px;
+}
+
+.tajalli-card{
+background:#111;
+border-radius:20px;
+padding:35px;
+text-align:center;
+border:2px solid rgba(255,255,255,.1);
+transition:.4s;
+cursor:pointer;
+}
+
+.tajalli-card:hover{transform:scale(1.06);}
+
+.card-name{font-size:1.6rem;color:#fff;}
+.card-sub{color:var(--gold);font-size:.9rem;margin-top:8px;display:block;}
 
 /* Reader Overlay */
-.reader{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;color:#111;overflow:auto;z-index:999;padding:40px}
-.reader h1{font-family:var(--urdu);color:#004d40;border-bottom:4px double var(--gold);padding-bottom:15px;margin-bottom:20px}
-.reader .content{font-family:var(--urdu);font-size:1.6rem;line-height:2.6;background:#fdfdfd;color:#111;padding:20px;border-radius:15px;min-height:300px;outline:none}
-.close{position:fixed;top:20px;left:20px;background:#e74c3c;color:#fff;border:none;padding:10px 25px;border-radius:30px;cursor:pointer}
-.save{position:fixed;top:20px;right:20px;background:var(--gold);color:#111;border:none;padding:10px 25px;border-radius:30px;cursor:pointer;font-weight:bold}
+.reader{
+display:none;
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+background:#fff;color:#111;overflow:auto;
+z-index:999;padding:40px;text-align:center;
+}
 
-footer{background:#000;text-align:center;padding:80px 20px;border-top:2px solid var(--gold)}
+.reader h1{
+font-family:var(--urdu);
+color:#004d40;
+border-bottom:4px double var(--gold);
+padding-bottom:15px;
+margin-bottom:20px;
+}
+
+.reader .content{
+font-family:var(--urdu);
+font-size:1.6rem;
+line-height:2.6;
+background:#fdfdfd;
+color:#111;
+padding:20px;
+border-radius:15px;
+min-height:300px;
+outline:none;
+text-align:center; /* Center start & end */
+}
+
+.close{
+position:fixed;top:20px;left:20px;
+background:#e74c3c;color:#fff;border:none;
+padding:10px 25px;border-radius:30px;cursor:pointer;
+}
+
+.save{
+position:fixed;top:20px;right:20px;
+background:var(--gold);color:#111;border:none;
+padding:10px 25px;border-radius:30px;cursor:pointer;font-weight:bold;
+}
+
+.editBtn{
+position:fixed;top:70px;right:20px;
+background:#3498db;color:#fff;border:none;
+padding:10px 25px;border-radius:30px;cursor:pointer;font-weight:bold;
+}
+
+footer{
+background:#000;text-align:center;padding:80px 20px;
+border-top:2px solid var(--gold);
+}
 </style>
 </head>
-
 <body>
 
 <section class="hero">
@@ -62,9 +167,10 @@ footer{background:#000;text-align:center;padding:80px 20px;border-top:2px solid 
 <!-- Reader Overlay -->
 <div class="reader" id="reader">
 <button class="close" onclick="closeReader()">بند کریں</button>
+<button class="editBtn" onclick="enableEdit()">ایڈیٹ (صرف مصنف)</button>
 <button class="save" onclick="saveContent()">محفوظ کریں</button>
 <h1 id="rtitle"></h1>
-<div class="content" id="rtext" contenteditable="true" spellcheck="true"></div>
+<div class="content" id="rtext" contenteditable="false" spellcheck="true"></div>
 </div>
 
 <footer>
@@ -97,8 +203,10 @@ const people=[
 {g:'sahaba',n:'حضرت ابوذر غفاریؓ',s:'صادق الامۃؓ',id:'s5'}
 ];
 
-let currentId=null;
+let currentId = null;
+const authorPassword = "Hassan@1122";
 
+// Build cards
 people.forEach(p=>{
     const d=document.createElement('div');
     d.className='tajalli-card';
@@ -107,23 +215,43 @@ people.forEach(p=>{
     document.getElementById(p.g).appendChild(d);
 });
 
+// Open Reader
 function openReader(id,name){
-    currentId=id;
-    document.getElementById('rtitle').innerText=name;
-    const saved=localStorage.getItem(id);
-    document.getElementById('rtext').innerHTML=saved || '';
+    currentId = id;
+    document.getElementById('rtitle').innerText = name;
+    const saved = localStorage.getItem(id);
+    document.getElementById('rtext').innerHTML = saved || '';
+    document.getElementById('rtext').contentEditable = false;
     document.getElementById('reader').style.display='block';
     document.body.style.overflow='hidden';
 }
 
+// Enable Edit
+function enableEdit(){
+    const pass = prompt("مصنف کے لیے پاسورڈ درج کریں:");
+    if(pass === authorPassword){
+        document.getElementById('rtext').contentEditable = true;
+        alert("اب آپ لکھ سکتے ہیں اور محفوظ کر سکتے ہیں۔");
+    } else {
+        alert("غلط پاسورڈ! صرف پڑھ سکتے ہیں۔");
+    }
+}
+
+// Save content
+function saveContent(){
+    const content = document.getElementById('rtext').innerHTML;
+    if(currentId && document.getElementById('rtext').contentEditable==="true"){
+        localStorage.setItem(currentId,content);
+        alert('مواد محفوظ ہو گیا');
+    } else {
+        alert('صرف مصنف مواد محفوظ کر سکتا ہے۔');
+    }
+}
+
+// Close reader
 function closeReader(){
     document.getElementById('reader').style.display='none';
     document.body.style.overflow='auto';
-}
-
-function saveContent(){
-    const content=document.getElementById('rtext').innerHTML;
-    if(currentId){localStorage.setItem(currentId,content); alert('مواد محفوظ ہو گیا');}
 }
 </script>
 
