@@ -1,259 +1,282 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سفینہ نجات | حسن بن محمد جتوئی</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفینہ نجات - شاہکار ایڈیشن</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --royal-gold: #d4af37;
+            --deep-emerald: #064e3b;
+            --paper-bg: #fdfaf1;
+        }
 
-<!-- Beautiful Arabic & Urdu Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            background-color: #f4f1ea;
+            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+        }
 
-<style>
-:root{
---bg:#020504;
---gold:#d4af37;
---urdu:'Noto Nastaliq Urdu',serif;
---arabic:'Amiri',serif;
-}
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            line-height: 2.5;
+            word-spacing: 2px;
+        }
 
-body{
-margin:0;
-background:var(--bg);
-color:#fff;
-font-family:'Segoe UI',sans-serif;
-}
+        .royal-border {
+            border: 10px solid transparent;
+            border-image: url('https://www.transparenttextures.com/patterns/graphy-dark.png') 30 stretch;
+            position: relative;
+        }
 
-.hero{
-height:70vh;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://i.ibb.co/whb2dctW/1000208078.jpg') center/cover;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-border-bottom:5px solid var(--gold);
-text-align:center;
-}
+        .royal-border::before {
+            content: "";
+            position: absolute;
+            top: -5px; bottom: -5px; left: -5px; right: -5px;
+            border: 2px solid var(--royal-gold);
+            pointer-events: none;
+        }
 
-.hero-title{
-font-family:var(--arabic);
-font-size:clamp(3.5rem,12vw,6rem);
-color:var(--gold);
-text-shadow:0 0 25px gold;
-padding:20px;
-}
+        .manuscript-card {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.5s ease;
+        }
 
-.hero-subtitle{
-font-family:var(--urdu);
-font-size:1.7rem;
-margin-top:10px;
-}
+        .sidebar-item {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
 
-.author-card{
-max-width:900px;
-margin:-80px auto 40px;
-background:#fff;
-color:#111;
-padding:40px;
-border-radius:25px;
-border:4px solid var(--gold);
-text-align:center;
-font-family:var(--urdu);
-}
+        .sidebar-item::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: var(--royal-gold);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
 
-.section-header{
-font-family:var(--urdu);
-font-size:2.5rem;
-color:var(--gold);
-text-align:center;
-margin:70px 0 40px;
-}
+        .sidebar-item:hover::after, .active-chapter::after {
+            width: 100%;
+        }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-gap:30px;
-}
+        .sidebar-item:hover, .active-chapter {
+            color: white !important;
+            transform: translateX(-5px);
+        }
 
-.tajalli-card{
-background:#111;
-border-radius:20px;
-padding:35px;
-text-align:center;
-border:2px solid rgba(255,255,255,.1);
-transition:.4s;
-cursor:pointer;
-}
+        .focus-mode #sidebar { width: 0; opacity: 0; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.tajalli-card:hover{transform:scale(1.06);}
+        .animate-page {
+            animation: fadeIn 0.8s ease forwards;
+        }
 
-.card-name{font-size:1.6rem;color:#fff;}
-.card-sub{color:var(--gold);font-size:.9rem;margin-top:8px;display:block;}
-
-/* Reader Overlay */
-.reader{
-display:none;
-position:fixed;
-top:0;left:0;width:100%;height:100%;
-background:#fff;color:#111;overflow:auto;
-z-index:999;padding:40px;text-align:center;
-}
-
-.reader h1{
-font-family:var(--urdu);
-color:#004d40;
-border-bottom:4px double var(--gold);
-padding-bottom:15px;
-margin-bottom:20px;
-}
-
-.reader .content{
-font-family:var(--urdu);
-font-size:1.6rem;
-line-height:2.6;
-background:#fdfdfd;
-color:#111;
-padding:20px;
-border-radius:15px;
-min-height:300px;
-outline:none;
-text-align:center; /* Center start & end */
-}
-
-.close{
-position:fixed;top:20px;left:20px;
-background:#e74c3c;color:#fff;border:none;
-padding:10px 25px;border-radius:30px;cursor:pointer;
-}
-
-.save{
-position:fixed;top:20px;right:20px;
-background:var(--gold);color:#111;border:none;
-padding:10px 25px;border-radius:30px;cursor:pointer;font-weight:bold;
-}
-
-.editBtn{
-position:fixed;top:70px;right:20px;
-background:#3498db;color:#fff;border:none;
-padding:10px 25px;border-radius:30px;cursor:pointer;font-weight:bold;
-}
-
-footer{
-background:#000;text-align:center;padding:80px 20px;
-border-top:2px solid var(--gold);
-}
-</style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--deep-emerald); border-radius: 10px; }
+    </style>
 </head>
-<body>
+<body class="overflow-hidden">
 
-<section class="hero">
-<h1 class="hero-title">سَفِينَةُ النَّجَاةِ</h1>
-<div class="hero-subtitle">تحقیق و تالیف: حسن بن محمد جتوئی</div>
-</section>
+    <!-- Top Navigation -->
+    <header class="h-20 bg-emerald-900 text-white flex items-center justify-between px-8 shadow-2xl relative z-50 border-b-4 border-yellow-600">
+        <div class="flex items-center gap-6">
+            <button onclick="toggleSidebar()" class="hover:rotate-90 transition-transform duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div class="text-right">
+                <h1 class="text-2xl font-bold tracking-widest text-yellow-500">سفینہ نجات</h1>
+                <p class="text-xs opacity-70">شاہکار ڈیجیٹل اسکرپٹ</p>
+            </div>
+        </div>
+        
+        <div class="flex items-center gap-4">
+            <button onclick="document.body.classList.toggle('focus-mode')" class="bg-emerald-800 px-4 py-2 rounded-full text-xs hover:bg-emerald-700 transition-all border border-yellow-700">فوکس موڈ</button>
+            <div class="h-10 w-px bg-emerald-700"></div>
+            <button onclick="window.print()" class="text-yellow-500 hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+            </button>
+        </div>
+    </header>
 
-<section class="author-card">
-<h2>حسن بن محمد جتوئی</h2>
-<p>خادمِ معارفِ اہلِ بیتؑ و صحابہ کرامؓ — یہ پورٹل کتاب "سفینہ نجات" کا ڈیجیٹل نسخہ ہے۔</p>
-</section>
+    <div class="flex h-[calc(100vh-80px)]">
+        
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-96 bg-white shadow-2xl overflow-y-auto transition-all duration-700 relative z-40 border-l border-stone-200">
+            <div class="p-8 text-center border-b-2 border-stone-100">
+                <div class="relative inline-block mb-4">
+                    <div class="w-20 h-20 rounded-full border-4 border-yellow-600 p-1">
+                        <div class="w-full h-full rounded-full bg-emerald-900 flex items-center justify-center text-2xl text-yellow-500">ح</div>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-emerald-900">علامہ حسن بن محمد جتوئی</h3>
+                <p class="text-xs text-stone-500 mt-2">خادمِ علم و معرفت</p>
+            </div>
+            
+            <div class="p-4" id="chapterNav">
+                <!-- Nav items generated here -->
+            </div>
+        </aside>
 
-<div class="section-header">پنجتن پاکؑ</div>
-<div class="grid" id="panjtan"></div>
+        <!-- Main Workspace -->
+        <main class="flex-1 bg-stone-100 overflow-y-auto p-4 md:p-12" id="mainBody">
+            <div id="welcome" class="max-w-4xl mx-auto text-center mt-20 animate-page">
+                <div class="mb-10 inline-block p-10 bg-white royal-border">
+                    <h2 class="text-5xl font-bold text-emerald-900 mb-6">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+                    <p class="text-2xl text-stone-600 leading-relaxed max-w-2xl mx-auto">
+                        کتاب "سفینہ نجات" کے پریمیم ڈیجیٹل نسخے میں خوش آمدید۔ یہ علمی سفر 24 ابواب پر مشتمل ہے جو آپ کی زندگی کی کشتی کو ساحلِ مراد تک پہنچانے کے لیے تیار کیا گیا ہے۔
+                    </p>
+                </div>
+                
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500">
+                        <span class="text-3xl block mb-2">📜</span>
+                        <h4 class="font-bold">جامعیت</h4>
+                        <p class="text-sm text-stone-500">تمام فقہی و اخلاقی مسائل کا احاطہ</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-emerald-500">
+                        <span class="text-3xl block mb-2">✒️</span>
+                        <h4 class="font-bold">سلاست</h4>
+                        <p class="text-sm text-stone-500">عام فہم اور سلیس اردو ترجمہ</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-500">
+                        <span class="text-3xl block mb-2">💎</span>
+                        <h4 class="font-bold">تحقیق</h4>
+                        <p class="text-sm text-stone-500">مستند عربی نصوص کے ساتھ</p>
+                    </div>
+                </div>
+            </div>
 
-<div class="section-header">ائمہ معصومینؑ</div>
-<div class="grid" id="imams"></div>
+            <!-- Chapter Content -->
+            <div id="chapterContainer" class="hidden max-w-4xl mx-auto">
+                <!-- Data will be injected here -->
+            </div>
+        </main>
+    </div>
 
-<div class="section-header">امہات المؤمنینؓ و صحابہؓ</div>
-<div class="grid" id="sahaba"></div>
+    <script>
+        const chapters = [
+            {
+                id: 1,
+                title: "باب 1: علم اور عالم کی فضیلت",
+                desc: "اسلام میں حصولِ علم کی اہمیت اور علماء کا مقام",
+                content: [
+                    { ar: "يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ", ur: "اللہ تعالیٰ تم میں سے ان لوگوں کے درجات بلند فرمائے گا جو ایمان لائے اور جنہیں علم دیا گیا۔" },
+                    { ar: "قَالَ النَّبِيُّ ﷺ: مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ طَرِيقًا إِلَى الْجَنَّةِ", ur: "نبی کریم ﷺ نے فرمایا: جو شخص علم کی تلاش میں کسی راستے پر چلے گا، اللہ اس کے لیے جنت کا راستہ آسان کر دے گا۔" }
+                ]
+            },
+            {
+                id: 2,
+                title: "باب 2: نیت اور اخلاص",
+                desc: "اعمال کی قبولیت کا دارومدار اخلاص پر ہے",
+                content: [
+                    { ar: "وَمَا أُمِرُوا إِلَّا لِيَعْبُدُوا اللَّهَ مُخْلِصِينَ لَهُ الدِّينَ", ur: "انہیں صرف یہی حکم دیا گیا تھا کہ اللہ کی عبادت کریں، اسی کے لیے دین کو خالص کرتے ہوئے۔" }
+                ]
+            }
+        ];
 
-<!-- Reader Overlay -->
-<div class="reader" id="reader">
-<button class="close" onclick="closeReader()">بند کریں</button>
-<button class="editBtn" onclick="enableEdit()">ایڈیٹ (صرف مصنف)</button>
-<button class="save" onclick="saveContent()">محفوظ کریں</button>
-<h1 id="rtitle"></h1>
-<div class="content" id="rtext" contenteditable="false" spellcheck="true"></div>
-</div>
+        // Generate placeholders for the remaining 22 chapters
+        for(let i=3; i<=24; i++) {
+            chapters.push({
+                id: i,
+                title: `باب ${i}: فقہی و اصلاحی مسائل`,
+                desc: `اس باب میں ${i} ویں موضوع پر تفصیلی بحث کی گئی ہے۔`,
+                content: [{ ar: "بِسْمِ اللَّهِ مَجْرَاهَا وَمُرْسَاهَا", ur: "اللہ ہی کے نام سے اس کا چلنا اور اس کا ٹھہرنا ہے۔" }]
+            });
+        }
 
-<footer>
-<h2 style="font-family:var(--urdu);color:var(--gold)">حسن بن محمد جتوئی</h2>
-<p style="color:#666">سفینہ نجات — مکمل ڈیجیٹل ایڈیشن</p>
-</footer>
+        const nav = document.getElementById('chapterNav');
+        const welcome = document.getElementById('welcome');
+        const container = document.getElementById('chapterContainer');
 
-<script>
-const people=[
-{g:'panjtan',n:'حضرت محمد مصطفیٰ ﷺ',s:'رحمتٌ للعالمین ﷺ',id:'p1'},
-{g:'panjtan',n:'امیر المؤمنین حضرت علیؑ',s:'اسدُ اللہ الغالبؑ',id:'p2'},
-{g:'panjtan',n:'سیدہ فاطمہ الزہراءؑ',s:'سیدة نساءِ العالمینؑ',id:'p3'},
-{g:'panjtan',n:'حضرت امام حسنؑ',s:'سید شباب اہل الجنۃؑ',id:'p4'},
-{g:'panjtan',n:'حضرت امام حسینؑ',s:'سید الشہداءؑ',id:'p5'},
+        function init() {
+            chapters.forEach(ch => {
+                const div = document.createElement('div');
+                div.className = "sidebar-item p-5 mb-3 rounded-lg cursor-pointer border border-stone-100 flex flex-col items-end group shadow-sm bg-white";
+                div.innerHTML = `
+                    <span class="text-[10px] text-yellow-600 font-bold mb-1 opacity-50 group-hover:opacity-100">CHAPTER ${ch.id}</span>
+                    <span class="font-bold text-emerald-900 group-hover:text-white">${ch.title}</span>
+                `;
+                div.onclick = () => loadChapter(ch.id, div);
+                nav.appendChild(div);
+            });
+        }
 
-{g:'imams',n:'حضرت امام زین العابدینؑ',s:'سید الساجدینؑ',id:'i1'},
-{g:'imams',n:'حضرت امام محمد باقرؑ',s:'باقر العلومؑ',id:'i2'},
-{g:'imams',n:'حضرت امام جعفر صادقؑ',s:'صادق آل محمدؑ',id:'i3'},
-{g:'imams',n:'حضرت امام موسیٰ کاظمؑ',s:'باب الحوائجؑ',id:'i4'},
-{g:'imams',n:'حضرت امام علی رضاؑ',s:'عالم آل محمدؑ',id:'i5'},
-{g:'imams',n:'حضرت امام محمد تقیؑ',s:'جواد الائمہؑ',id:'i6'},
-{g:'imams',n:'حضرت امام علی نقیؑ',s:'ہادیؑ',id:'i7'},
-{g:'imams',n:'حضرت امام حسن عسکریؑ',s:'عسکریؑ',id:'i8'},
-{g:'imams',n:'حضرت امام مہدیؑ (عج)',s:'بقیة اللہؑ',id:'i9'},
+        function loadChapter(id, element) {
+            // UI Classes
+            document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active-chapter'));
+            element.classList.add('active-chapter');
 
-{g:'sahaba',n:'سیدہ خدیجہؓ',s:'ام المؤمنینؓ',id:'s1'},
-{g:'sahaba',n:'سیدہ عائشہؓ',s:'ام المؤمنینؓ',id:'s2'},
-{g:'sahaba',n:'حضرت عبداللہ بن عباسؓ',s:'حبر الامہؓ',id:'s3'},
-{g:'sahaba',n:'حضرت سلمان فارسیؓ',s:'سلمان محمدیؓ',id:'s4'},
-{g:'sahaba',n:'حضرت ابوذر غفاریؓ',s:'صادق الامۃؓ',id:'s5'}
-];
+            const ch = chapters.find(c => c.id === id);
+            welcome.classList.add('hidden');
+            container.classList.remove('hidden');
+            container.classList.remove('animate-page');
+            void container.offsetWidth; // Trigger reflow
+            container.classList.add('animate-page');
 
-let currentId = null;
-const authorPassword = "Hassan@1122";
+            container.innerHTML = `
+                <div class="mb-12 text-right">
+                    <h2 class="text-4xl font-bold text-emerald-900 mb-2">${ch.title}</h2>
+                    <p class="text-stone-500 italic">${ch.desc}</p>
+                    <div class="h-1 w-32 bg-yellow-500 mt-6 rounded-full"></div>
+                </div>
+                <div id="pageBlocks" class="space-y-12"></div>
+            `;
 
-// Build cards
-people.forEach(p=>{
-    const d=document.createElement('div');
-    d.className='tajalli-card';
-    d.innerHTML=`<strong class="card-name">${p.n}</strong><span class="card-sub">${p.s}</span>`;
-    d.onclick=()=>{openReader(p.id,p.n)};
-    document.getElementById(p.g).appendChild(d);
-});
+            const blocks = document.getElementById('pageBlocks');
+            ch.content.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "manuscript-card p-10 royal-border";
+                card.innerHTML = `
+                    <div class="arabic-text text-4xl text-right mb-10 text-emerald-950 font-medium" dir="rtl">
+                        ${item.ar}
+                    </div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="flex-1 h-px bg-stone-200"></div>
+                        <span class="text-yellow-600">❂</span>
+                        <div class="flex-1 h-px bg-stone-200"></div>
+                    </div>
+                    <div class="text-xl text-right text-stone-700 leading-loose">
+                        <span class="text-emerald-700 font-bold text-2xl ml-2">ترجمہ:</span> ${item.ur}
+                    </div>
+                    <div class="mt-8 flex justify-start gap-3">
+                        <button onclick="copyText('${item.ur}')" class="text-xs text-stone-400 hover:text-emerald-700 transition-colors">کاپی کریں</button>
+                    </div>
+                `;
+                blocks.appendChild(card);
+            });
+            document.getElementById('mainBody').scrollTop = 0;
+        }
 
-// Open Reader
-function openReader(id,name){
-    currentId = id;
-    document.getElementById('rtitle').innerText = name;
-    const saved = localStorage.getItem(id);
-    document.getElementById('rtext').innerHTML = saved || '';
-    document.getElementById('rtext').contentEditable = false;
-    document.getElementById('reader').style.display='block';
-    document.body.style.overflow='hidden';
-}
+        function toggleSidebar() {
+            const side = document.getElementById('sidebar');
+            side.classList.toggle('w-0');
+            side.classList.toggle('opacity-0');
+        }
 
-// Enable Edit
-function enableEdit(){
-    const pass = prompt("مصنف کے لیے پاسورڈ درج کریں:");
-    if(pass === authorPassword){
-        document.getElementById('rtext').contentEditable = true;
-        alert("اب آپ لکھ سکتے ہیں اور محفوظ کر سکتے ہیں۔");
-    } else {
-        alert("غلط پاسورڈ! صرف پڑھ سکتے ہیں۔");
-    }
-}
+        function copyText(txt) {
+            navigator.clipboard.writeText(txt);
+            alert("ترجمہ کاپی کر لیا گیا ہے!");
+        }
 
-// Save content
-function saveContent(){
-    const content = document.getElementById('rtext').innerHTML;
-    if(currentId && document.getElementById('rtext').contentEditable==="true"){
-        localStorage.setItem(currentId,content);
-        alert('مواد محفوظ ہو گیا');
-    } else {
-        alert('صرف مصنف مواد محفوظ کر سکتا ہے۔');
-    }
-}
-
-// Close reader
-function closeReader(){
-    document.getElementById('reader').style.display='none';
-    document.body.style.overflow='auto';
-}
-</script>
-
+        init();
+    </script>
 </body>
 </html>
