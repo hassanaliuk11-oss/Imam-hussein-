@@ -11,269 +11,267 @@
             --royal-gold: #d4af37;
             --deep-emerald: #064e3b;
             --paper-bg: #fdfaf1;
+            --dark-emerald: #042f2e;
         }
 
         body {
             font-family: 'Noto Nastaliq Urdu', serif;
-            background-color: #f4f1ea;
-            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
-        }
-
-        .arabic-text {
-            font-family: 'Amiri', serif;
-            line-height: 2.5;
-            word-spacing: 2px;
-        }
-
-        .royal-border {
-            border: 10px solid transparent;
-            border-image: url('https://www.transparenttextures.com/patterns/graphy-dark.png') 30 stretch;
-            position: relative;
-        }
-
-        .royal-border::before {
-            content: "";
-            position: absolute;
-            top: -5px; bottom: -5px; left: -5px; right: -5px;
-            border: 2px solid var(--royal-gold);
-            pointer-events: none;
-        }
-
-        .manuscript-card {
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.5s ease;
-        }
-
-        .sidebar-item {
-            position: relative;
+            background-color: #e5e7eb;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
 
-        .sidebar-item::after {
-            content: "";
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 0;
-            background: var(--royal-gold);
-            transition: width 0.3s ease;
-            z-index: -1;
+        /* Manuscript Paper Texture */
+        .paper-texture {
+            background-color: var(--paper-bg);
+            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.05);
         }
 
-        .sidebar-item:hover::after, .active-chapter::after {
-            width: 100%;
+        .arabic-font {
+            font-family: 'Amiri', serif;
+            line-height: 2.2;
         }
 
-        .sidebar-item:hover, .active-chapter {
-            color: white !important;
-            transform: translateX(-5px);
+        /* Chapter Opening Animation */
+        @keyframes bookOpen {
+            0% { transform: rotateY(-90deg); opacity: 0; }
+            100% { transform: rotateY(0deg); opacity: 1; }
         }
 
-        .focus-mode #sidebar { width: 0; opacity: 0; }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .book-page-animation {
+            animation: bookOpen 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            transform-origin: right;
+            perspective: 1000px;
         }
 
-        .animate-page {
-            animation: fadeIn 0.8s ease forwards;
+        /* Decorative Borders */
+        .ornamental-border {
+            border: 20px solid transparent;
+            border-image: url('https://www.transparenttextures.com/patterns/black-paper.png') 30 round;
+            position: relative;
+        }
+
+        .gold-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--royal-gold), transparent);
+            margin: 20px 0;
+        }
+
+        /* Sidebar Styling */
+        .sidebar-gradient {
+            background: linear-gradient(180deg, var(--dark-emerald) 0%, var(--deep-emerald) 100%);
+        }
+
+        .nav-item {
+            transition: all 0.4s ease;
+            border-right: 4px solid transparent;
+        }
+
+        .nav-item:hover, .nav-active {
+            background: rgba(212, 175, 55, 0.1);
+            border-right: 4px solid var(--royal-gold);
+            padding-right: 2rem;
+            color: var(--royal-gold) !important;
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: var(--deep-emerald); border-radius: 10px; }
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: var(--royal-gold); border-radius: 10px; }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
     </style>
 </head>
-<body class="overflow-hidden">
+<body class="flex h-screen">
 
-    <!-- Top Navigation -->
-    <header class="h-20 bg-emerald-900 text-white flex items-center justify-between px-8 shadow-2xl relative z-50 border-b-4 border-yellow-600">
-        <div class="flex items-center gap-6">
-            <button onclick="toggleSidebar()" class="hover:rotate-90 transition-transform duration-500">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="w-80 sidebar-gradient text-white flex flex-col shadow-2xl z-50 transition-all duration-500">
+        <div class="p-8 text-center border-b border-emerald-800">
+            <div class="mb-4 inline-block relative">
+                <div class="w-24 h-24 rounded-full border-2 border-yellow-500 p-1 flex items-center justify-center bg-white/10 backdrop-blur-md">
+                    <span class="text-4xl">📜</span>
+                </div>
+            </div>
+            <h1 class="text-2xl font-bold text-yellow-500 tracking-tighter">سفینہ نجات</h1>
+            <p class="text-[10px] mt-1 opacity-60 uppercase tracking-widest">مصنف: حسن بن محمد جتوئی</p>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto custom-scroll p-4" id="chapterNav">
+            <button onclick="showIntro()" class="w-full text-right p-4 mb-4 rounded-lg bg-white/5 hover:bg-white/10 transition-all">
+                🏠 تعارف و عرضِ حال
+            </button>
+            <!-- Chapters will be injected here -->
+        </nav>
+        
+        <div class="p-4 bg-black/20 text-[10px] text-center opacity-40">
+            تمام حقوق بحق مصنف محفوظ ہیں
+        </div>
+    </aside>
+
+    <!-- Main Display Area -->
+    <main class="flex-1 overflow-hidden relative paper-texture flex flex-col">
+        
+        <!-- Header Bar -->
+        <header class="h-16 flex items-center justify-between px-8 border-b border-stone-200 bg-white/50 backdrop-blur-sm z-30">
+            <button onclick="toggleSidebar()" class="text-emerald-900 hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <div class="text-right">
-                <h1 class="text-2xl font-bold tracking-widest text-yellow-500">سفینہ نجات</h1>
-                <p class="text-xs opacity-70">شاہکار ڈیجیٹل اسکرپٹ</p>
+            <div id="topTitle" class="text-emerald-900 font-bold opacity-0 transition-opacity duration-500">سفینہ نجات</div>
+            <div class="flex gap-4">
+                <button onclick="window.print()" title="پرنٹ کریں" class="text-emerald-800">🖨️</button>
             </div>
-        </div>
-        
-        <div class="flex items-center gap-4">
-            <button onclick="document.body.classList.toggle('focus-mode')" class="bg-emerald-800 px-4 py-2 rounded-full text-xs hover:bg-emerald-700 transition-all border border-yellow-700">فوکس موڈ</button>
-            <div class="h-10 w-px bg-emerald-700"></div>
-            <button onclick="window.print()" class="text-yellow-500 hover:scale-110 transition-transform">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-                </svg>
-            </button>
-        </div>
-    </header>
+        </header>
 
-    <div class="flex h-[calc(100vh-80px)]">
-        
-        <!-- Sidebar -->
-        <aside id="sidebar" class="w-96 bg-white shadow-2xl overflow-y-auto transition-all duration-700 relative z-40 border-l border-stone-200">
-            <div class="p-8 text-center border-b-2 border-stone-100">
-                <div class="relative inline-block mb-4">
-                    <div class="w-20 h-20 rounded-full border-4 border-yellow-600 p-1">
-                        <div class="w-full h-full rounded-full bg-emerald-900 flex items-center justify-center text-2xl text-yellow-500">ح</div>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold text-emerald-900">علامہ حسن بن محمد جتوئی</h3>
-                <p class="text-xs text-stone-500 mt-2">خادمِ علم و معرفت</p>
-            </div>
+        <!-- Content Area -->
+        <div id="scrollContainer" class="flex-1 overflow-y-auto custom-scroll p-6 md:p-12">
             
-            <div class="p-4" id="chapterNav">
-                <!-- Nav items generated here -->
-            </div>
-        </aside>
-
-        <!-- Main Workspace -->
-        <main class="flex-1 bg-stone-100 overflow-y-auto p-4 md:p-12" id="mainBody">
-            <div id="welcome" class="max-w-4xl mx-auto text-center mt-20 animate-page">
-                <div class="mb-10 inline-block p-10 bg-white royal-border">
-                    <h2 class="text-5xl font-bold text-emerald-900 mb-6">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
-                    <p class="text-2xl text-stone-600 leading-relaxed max-w-2xl mx-auto">
-                        کتاب "سفینہ نجات" کے پریمیم ڈیجیٹل نسخے میں خوش آمدید۔ یہ علمی سفر 24 ابواب پر مشتمل ہے جو آپ کی زندگی کی کشتی کو ساحلِ مراد تک پہنچانے کے لیے تیار کیا گیا ہے۔
+            <!-- Introduction Section -->
+            <div id="introView" class="max-w-4xl mx-auto space-y-12">
+                <div class="text-center py-10">
+                    <h2 class="text-6xl font-bold text-emerald-900 mb-6 drop-shadow-md">بِسْمِ اللہِ الرَّحْمٰنِ الرَّحِیْمِ</h2>
+                    <div class="gold-line"></div>
+                    <p class="text-2xl text-stone-700 leading-relaxed italic">
+                        "علم کا سمندر اور ہدایت کا راستہ - حضرت علامہ حسن بن محمد جتوئی کی شہرہ آفاق تصنیف"
                     </p>
                 </div>
-                
-                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500">
-                        <span class="text-3xl block mb-2">📜</span>
-                        <h4 class="font-bold">جامعیت</h4>
-                        <p class="text-sm text-stone-500">تمام فقہی و اخلاقی مسائل کا احاطہ</p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-8 bg-white/80 rounded-3xl border border-yellow-500/20 shadow-xl">
+                        <h3 class="text-2xl font-bold text-emerald-800 mb-4 border-b-2 border-yellow-500 pb-2">تعارفِ مصنف</h3>
+                        <p class="text-lg leading-loose text-stone-600">
+                            حضرت علامہ <strong>حسن بن محمد جتوئی</strong> صاحب علم و عمل کا پیکر ہیں۔ آپ کی تحریریں نہ صرف فکری آبیاری کرتی ہیں بلکہ روح کو بالیدگی بھی بخشتی ہیں۔ آپ نے اس کتاب میں نہایت سادگی سے بڑے علمی مسائل کو حل کیا ہے۔
+                        </p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-emerald-500">
-                        <span class="text-3xl block mb-2">✒️</span>
-                        <h4 class="font-bold">سلاست</h4>
-                        <p class="text-sm text-stone-500">عام فہم اور سلیس اردو ترجمہ</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-500">
-                        <span class="text-3xl block mb-2">💎</span>
-                        <h4 class="font-bold">تحقیق</h4>
-                        <p class="text-sm text-stone-500">مستند عربی نصوص کے ساتھ</p>
+                    <div class="p-8 bg-white/80 rounded-3xl border border-yellow-500/20 shadow-xl">
+                        <h3 class="text-2xl font-bold text-emerald-800 mb-4 border-b-2 border-yellow-500 pb-2">کتاب کا پس منظر</h3>
+                        <p class="text-lg leading-loose text-stone-600">
+                            <strong>"سفینہ نجات"</strong> ایک ایسی کشتی ہے جو قاری کو گناہوں کے سمندر سے نکال کر امن کے ساحل تک لے جاتی ہے۔ اس کے 24 ابواب انسانی زندگی کے ہر پہلو کی عکاسی کرتے ہیں۔
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Chapter Content -->
-            <div id="chapterContainer" class="hidden max-w-4xl mx-auto">
-                <!-- Data will be injected here -->
+            <!-- Chapter View -->
+            <div id="chapterView" class="hidden max-w-5xl mx-auto">
+                <div class="book-page-animation">
+                    <div id="chapterHeader" class="text-center mb-16">
+                        <span id="chNum" class="text-yellow-600 font-bold tracking-[0.3em] text-sm block mb-2">CHAPTER 01</span>
+                        <h2 id="chTitle" class="text-5xl font-bold text-emerald-950 mb-4"></h2>
+                        <div class="flex items-center justify-center gap-4">
+                            <div class="h-[1px] w-20 bg-stone-300"></div>
+                            <span class="text-yellow-600 text-2xl">❃</span>
+                            <div class="h-[1px] w-20 bg-stone-300"></div>
+                        </div>
+                    </div>
+
+                    <div id="contentGrid" class="space-y-12">
+                        <!-- Content loaded via JS -->
+                    </div>
+                </div>
             </div>
-        </main>
-    </div>
+
+        </div>
+    </main>
 
     <script>
         const chapters = [
-            {
-                id: 1,
-                title: "باب 1: علم اور عالم کی فضیلت",
-                desc: "اسلام میں حصولِ علم کی اہمیت اور علماء کا مقام",
-                content: [
-                    { ar: "يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ", ur: "اللہ تعالیٰ تم میں سے ان لوگوں کے درجات بلند فرمائے گا جو ایمان لائے اور جنہیں علم دیا گیا۔" },
-                    { ar: "قَالَ النَّبِيُّ ﷺ: مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ طَرِيقًا إِلَى الْجَنَّةِ", ur: "نبی کریم ﷺ نے فرمایا: جو شخص علم کی تلاش میں کسی راستے پر چلے گا، اللہ اس کے لیے جنت کا راستہ آسان کر دے گا۔" }
-                ]
-            },
-            {
-                id: 2,
-                title: "باب 2: نیت اور اخلاص",
-                desc: "اعمال کی قبولیت کا دارومدار اخلاص پر ہے",
-                content: [
-                    { ar: "وَمَا أُمِرُوا إِلَّا لِيَعْبُدُوا اللَّهَ مُخْلِصِينَ لَهُ الدِّينَ", ur: "انہیں صرف یہی حکم دیا گیا تھا کہ اللہ کی عبادت کریں، اسی کے لیے دین کو خالص کرتے ہوئے۔" }
-                ]
-            }
+            { id: 1, title: "باب 1: توحید اور معرفت", content: [
+                { ar: "شَهَدَ اللَّهُ أَنَّهُ لَا إِلَهَ إِلَّا هُوَ وَالْمَلَائِكَةُ وَأُولُو الْعِلْمِ قَائِمًا بِالْقِسْطِ", ur: "اللہ تعالیٰ، فرشتے اور اہلِ علم اس بات کی گواہی دیتے ہیں کہ اللہ کے سوا کوئی معبود نہیں اور وہ عدل کے ساتھ قائم ہے۔" },
+                { ar: "قُلْ هُوَ اللَّهُ أَحَدٌ، اللَّهُ الصَّمَدُ", ur: "آپ فرما دیجیے کہ وہ اللہ ایک ہے، اللہ بے نیاز ہے۔" }
+            ]},
+            { id: 2, title: "باب 2: نماز کا نور", content: [
+                { ar: "إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَوْقُوتًا", ur: "بے شک نماز مومنوں پر مقررہ وقت میں فرض کی گئی ہے۔" }
+            ]},
+            { id: 3, title: "باب 3: اخلاقِ نبوی ﷺ", content: [
+                { ar: "وَإِنَّكَ لَعَلَى خُلُقٍ عَظِيمٍ", ur: "اور بے شک آپ ﷺ اخلاق کے بلند ترین مرتبے پر فائز ہیں۔" }
+            ]}
         ];
 
-        // Generate placeholders for the remaining 22 chapters
-        for(let i=3; i<=24; i++) {
+        // Fill remaining chapters
+        for(let i=4; i<=24; i++) {
             chapters.push({
                 id: i,
-                title: `باب ${i}: فقہی و اصلاحی مسائل`,
-                desc: `اس باب میں ${i} ویں موضوع پر تفصیلی بحث کی گئی ہے۔`,
-                content: [{ ar: "بِسْمِ اللَّهِ مَجْرَاهَا وَمُرْسَاهَا", ur: "اللہ ہی کے نام سے اس کا چلنا اور اس کا ٹھہرنا ہے۔" }]
+                title: `باب ${i}: دینی مسائل و حکمت`,
+                content: [{ ar: "العِلْمُ نُورٌ يَقْذِفُهُ اللهُ فِي قَلْبِ مَنْ يَشَاءُ", ur: "علم وہ نور ہے جو اللہ جس کے دل میں چاہتا ہے ڈال دیتا ہے۔" }]
             });
         }
-
-        const nav = document.getElementById('chapterNav');
-        const welcome = document.getElementById('welcome');
-        const container = document.getElementById('chapterContainer');
 
         function init() {
+            const nav = document.getElementById('chapterNav');
             chapters.forEach(ch => {
-                const div = document.createElement('div');
-                div.className = "sidebar-item p-5 mb-3 rounded-lg cursor-pointer border border-stone-100 flex flex-col items-end group shadow-sm bg-white";
-                div.innerHTML = `
-                    <span class="text-[10px] text-yellow-600 font-bold mb-1 opacity-50 group-hover:opacity-100">CHAPTER ${ch.id}</span>
-                    <span class="font-bold text-emerald-900 group-hover:text-white">${ch.title}</span>
+                const btn = document.createElement('button');
+                btn.className = "nav-item w-full text-right p-4 text-white/80 hover:text-white flex flex-col";
+                btn.innerHTML = `
+                    <span class="text-[9px] text-yellow-500/50">CHAPTER ${ch.id.toString().padStart(2, '0')}</span>
+                    <span class="text-sm font-bold">${ch.title}</span>
                 `;
-                div.onclick = () => loadChapter(ch.id, div);
-                nav.appendChild(div);
+                btn.onclick = (e) => loadChapter(ch.id, btn);
+                nav.appendChild(btn);
             });
         }
 
-        function loadChapter(id, element) {
-            // UI Classes
-            document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active-chapter'));
-            element.classList.add('active-chapter');
-
+        function loadChapter(id, btn) {
             const ch = chapters.find(c => c.id === id);
-            welcome.classList.add('hidden');
-            container.classList.remove('hidden');
-            container.classList.remove('animate-page');
-            void container.offsetWidth; // Trigger reflow
-            container.classList.add('animate-page');
+            document.getElementById('introView').classList.add('hidden');
+            const view = document.getElementById('chapterView');
+            view.classList.remove('hidden');
+            
+            // Animation Reset
+            view.classList.remove('book-page-animation');
+            void view.offsetWidth; 
+            view.classList.add('book-page-animation');
 
-            container.innerHTML = `
-                <div class="mb-12 text-right">
-                    <h2 class="text-4xl font-bold text-emerald-900 mb-2">${ch.title}</h2>
-                    <p class="text-stone-500 italic">${ch.desc}</p>
-                    <div class="h-1 w-32 bg-yellow-500 mt-6 rounded-full"></div>
-                </div>
-                <div id="pageBlocks" class="space-y-12"></div>
-            `;
+            document.getElementById('chNum').innerText = `CHAPTER ${id.toString().padStart(2, '0')}`;
+            document.getElementById('chTitle').innerText = ch.title;
+            document.getElementById('topTitle').innerText = ch.title;
+            document.getElementById('topTitle').style.opacity = '1';
 
-            const blocks = document.getElementById('pageBlocks');
-            ch.content.forEach(item => {
-                const card = document.createElement('div');
-                card.className = "manuscript-card p-10 royal-border";
-                card.innerHTML = `
-                    <div class="arabic-text text-4xl text-right mb-10 text-emerald-950 font-medium" dir="rtl">
-                        ${item.ar}
+            const grid = document.getElementById('contentGrid');
+            grid.innerHTML = '';
+
+            ch.content.forEach((item, index) => {
+                const block = document.createElement('div');
+                block.className = "content-card p-10 rounded-2xl relative overflow-hidden group";
+                block.innerHTML = `
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-yellow-500/10 flex items-center justify-center text-stone-300 font-bold text-4xl opacity-20">${index + 1}</div>
+                    <div class="arabic-font text-4xl text-right text-emerald-900 mb-8 leading-loose" dir="rtl">${item.ar}</div>
+                    <div class="flex items-center gap-6 mb-6">
+                        <div class="h-[1px] flex-1 bg-stone-200"></div>
+                        <div class="text-yellow-600">✤</div>
+                        <div class="h-[1px] flex-1 bg-stone-200"></div>
                     </div>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="flex-1 h-px bg-stone-200"></div>
-                        <span class="text-yellow-600">❂</span>
-                        <div class="flex-1 h-px bg-stone-200"></div>
-                    </div>
-                    <div class="text-xl text-right text-stone-700 leading-loose">
-                        <span class="text-emerald-700 font-bold text-2xl ml-2">ترجمہ:</span> ${item.ur}
-                    </div>
-                    <div class="mt-8 flex justify-start gap-3">
-                        <button onclick="copyText('${item.ur}')" class="text-xs text-stone-400 hover:text-emerald-700 transition-colors">کاپی کریں</button>
+                    <div class="text-xl text-right text-stone-600 leading-relaxed italic">
+                        <span class="text-emerald-700 font-bold ml-2">اردو ترجمہ:</span> ${item.ur}
                     </div>
                 `;
-                blocks.appendChild(card);
+                grid.appendChild(block);
             });
-            document.getElementById('mainBody').scrollTop = 0;
+
+            // Sidebar active state
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('nav-active'));
+            btn.classList.add('nav-active');
+            
+            document.getElementById('scrollContainer').scrollTop = 0;
+            if(window.innerWidth < 768) toggleSidebar();
+        }
+
+        function showIntro() {
+            document.getElementById('introView').classList.remove('hidden');
+            document.getElementById('chapterView').classList.add('hidden');
+            document.getElementById('topTitle').style.opacity = '0';
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('nav-active'));
         }
 
         function toggleSidebar() {
-            const side = document.getElementById('sidebar');
-            side.classList.toggle('w-0');
-            side.classList.toggle('opacity-0');
-        }
-
-        function copyText(txt) {
-            navigator.clipboard.writeText(txt);
-            alert("ترجمہ کاپی کر لیا گیا ہے!");
+            const sb = document.getElementById('sidebar');
+            sb.classList.toggle('w-0');
+            sb.classList.toggle('opacity-0');
         }
 
         init();
