@@ -1146,8 +1146,18 @@
                 { ar: "السَّلَامُ عَلَی بَنَاتِ عَلِيٍّ وَ فَاطِمَةَ الْمَظْلُومَاتِ", ur: "سلام ہو علیؑ و فاطمہؑ کی ان مظلوم بیٹیوں پر۔" }
             ]
         },
-           // --- مولا علی علیہ السلام کے عظیم عاشقوں کا سلسلہ (ID 15 سے 24) ---
-
+         // باب 14: حضرت امیر حمزہ بن عبدالمطلب (علیہ السلام)
+        { 
+            id: 14, 
+            title: "باب 14: حضرت امیر حمزہ بن عبدالمطلبؑ (سید الشہداء / اسد اللہ)", 
+            content: [
+                { ar: "السَّلَامُ عَلَيْكَ يَا عَمَّ رَسُولِ اللَّهِ", ur: "سلام ہو آپ پر اے رسول اللہ ﷺ کے محترم چچا۔" },
+                { ar: "السَّلَامُ عَلَيْكَ يَا سَيِّدَ الشُّهَدَاءِ", ur: "سلام ہو آپ پر اے شہیدوں کے سردار۔" },
+                { ar: "السَّلَامُ عَلَيْكَ يَا أَسَدَ اللَّهِ وَ أَسَدَ رَسُولِهِ", ur: "سلام ہو آپ پر اے اللہ اور اس کے رسول کے شیر۔" },
+                { ar: "أَشْهَدُ أَنَّكَ قَدْ جَاهَدْتَ فِي اللَّهِ حَقَّ جِهَادِهِ", ur: "میں گواہی دیتا ہوں کہ آپ نے اللہ کی راہ میں جہاد کا حق ادا کر دیا۔" },
+                { ar: "السَّلَامُ عَلَى نَاصِرِ دِينِ اللَّهِ", ur: "سلام ہو اللہ کے دین کے عظیم مددگار پر۔" }
+            ]
+        },
         // باب 15: جنابِ عمار ابن یاسرؑ
         { 
             id: 15, 
@@ -2717,39 +2727,87 @@
                 { ar: "السَّلَامُ عَلَى مَنْ قُتِلَ فِي سَبِيلِ اللَّهِ بِبَصِيرَةٍ", ur: "سلام ہو اللہ کی راہ میں بصیرت کے ساتھ شہید ہونے والے پر۔" }
             ]
         },
+        // 1. تمام ڈیٹا کو ایک ہی ویری ایبل میں رکھیں
+const chapters = [
+    // یہاں آپ کے تمام پرانے ابواب (1 سے 168) آئیں گے
+    { 
+        id: 168, 
+        title: "باب 168: تمام گمنام شہدائے کربلا", 
+        content: [
+            { ar: "السَّلَامُ عَلَى الشُّهَدَاءِ الَّذِينَ لَمْ تُعْرَفْ أَسْمَاؤُهُمْ", ur: "سلام ہو ان شہیدوں پر جن کے نام معلوم نہیں۔" }
+        ]
+    },
+    { 
+        id: 169, 
+        title: "باب 169: حسن بن محمد جتوئی (خادمِ بارگاہِ ولایت)", 
+        content: [
+            { ar: "اَللّٰهُمَّ اجْعَلْنِي مِنْ خُدَّامِ آلِ مُحَمَّدٍ", ur: "اے اللہ! مجھے آلِ محمدؑ کے خادموں میں شمار فرما۔" }
+        ]
+    }
+]; // یہاں ایرے ختم ہو رہی ہے
 
-        // باب 168: تمام گممنام شہدائے کربلا
-        { 
-            id: 168, 
-            title: "باب 168: تمام گمنام شہدائے کربلا (عاشقانِ پوشیدہ)", 
-            content: [
-                { ar: "السَّلَامُ عَلَى الشُّهَدَاءِ الَّذِينَ لَمْ تُعْرَفْ أَسْمَاؤُهُمْ", ur: "سلام ہو ان شہیدوں پر جن کے نام (عام لوگوں کو) معلوم نہیں۔" },
-                { ar: "السَّلَامُ عَلَى الْأَرْوَاحِ الَّتِي حَلَّتْ بِفِنَاءِ الْحُسَيْنِ", ur: "سلام ہو ان روحوں پر جنہوں نے حسینؑ کی بارگاہ میں سکونت اختیار کی۔" }
-            ]
-        },
+// 2. خالی ابواب بھرنے کا فنکشن (اگر ضرورت ہو)
+for(let i=170; i<=180; i++) {
+    chapters.push({
+        id: i,
+        title: `باب ${i}: فقہی و اخلاقی ہدایت`,
+        content: [{ ar: "بِسْمِ اللَّهِ", ur: "اللہ کے نام سے" }]
+    });
+}
 
-        // باب 169: حسن بن محمد جتوئی (خادمِ بارگاہِ ولایت)
-        { 
-            id: 169, 
-            title: "باب 169: حسن بن محمد جتوئی (نوکر و غلامِ رسول ﷺ)", 
-            content: [
-                { ar: "اَللّٰهُمَّ اجْعَلْنِي مِنْ خُدَّامِ آلِ مُحَمَّدٍ", ur: "اے اللہ! مجھے آلِ محمدؑ کے خادموں میں شمار فرما۔" },
-                { ar: "السَّلَامُ عَلَى مَنْ جَعَلَ حَيَاتَهُ فِي نُصْرَةِ ذِكْرِ أَهْلِ الْبَيْتِ", ur: "سلام ہو اس پر جس نے اپنی زندگی کو ذکرِ اہل بیتؑ کی نصرت کے لیے وقف کیا۔" },
-                { ar: "نَوْکَرٌ غُلَامُ رَسُولِ اللّٰہِ ﷺ", ur: "میں اللہ کے رسول ﷺ کا نوکر اور ادنیٰ غلام ہوں۔" }
-             ]
-            }
-        ];
+// 3. ویب سائٹ لوڈ ہونے کا فنکشن
+function init() {
+    const nav = document.getElementById('chapterNav');
+    if(!nav) return; // اگر مینو نہ ملے تو ایرر نہ آئے
+    
+    nav.innerHTML = ""; // پرانا ڈیٹا صاف کریں
+    
+    chapters.forEach(ch => {
+        const btn = document.createElement('button');
+        btn.className = "nav-item w-full text-right p-4 text-white/80 hover:text-white flex flex-col border-b border-white/10";
+        btn.innerHTML = `
+            <span class="text-[9px] text-yellow-500/50 uppercase">Chapter ${ch.id}</span>
+            <span class="text-sm font-bold">${ch.title}</span>
+        `;
+        btn.onclick = () => loadChapter(ch.id);
+        nav.appendChild(btn);
+    });
+}
 
-        // Fill other 23 placeholders for structure
-        for(let i=170; i<=170; i++) {
-            chapters.push({
-                id: i,
-                title: `باب ${i}: فقہی و اخلاقی ہدایت`,
-                content: [{ ar: "بِسْمِ اللَّهِ مَجْرَاهَا وَمُرْسَاهَا", ur: "اللہ ہی کے نام سے اس کا چلنا اور اس کا ٹھہرنا ہے۔" }]
-            });
-        }
+// 4. باب لوڈ کرنے کا فنکشن (مکمل ورژن)
+function loadChapter(id) {
+    const ch = chapters.find(c => c.id === id);
+    if(!ch) return;
 
-        function init() {
+    // ویوز (Views) کو کنٹرول کرنا
+    const introView = document.getElementById('introView');
+    const chapterView = document.getElementById('chapterView');
+    const contentDiv = document.getElementById('chapterContent');
+    const titleH1 = document.getElementById('chapterTitle');
+
+    if(introView) introView.classList.add('hidden');
+    if(chapterView) {
+        chapterView.classList.remove('hidden');
+        chapterView.classList.remove('book-page-animation');
+        void chapterView.offsetWidth; // ری سیٹ اینیمیشن
+        chapterView.classList.add('book-page-animation');
+    }
+
+    // ٹائٹل اور مواد اپ ڈیٹ کریں
+    if(titleH1) titleH1.innerText = ch.title;
+    if(contentDiv) {
+        contentDiv.innerHTML = ch.content.map(item => `
+            <div class="mb-6 text-right p-4 bg-white/5 rounded-lg">
+                <p class="text-2xl mb-2 text-yellow-500 leading-loose" dir="rtl">${item.ar}</p>
+                <p class="text-lg text-white/70">${item.ur}</p>
+            </div>
+        `).join('');
+    }
+    
+    // موبائل پر مینو بند کرنے کے لیے (اگر ضرورت ہو)
+    // toggleMenu(); 
+}
+function init() {
             const nav = document.getElementById('chapterNav');
             chapters.forEach(ch => {
                 const btn = document.createElement('button');
@@ -2822,3 +2880,4 @@
     </script>
 </body>
 </html>
+
